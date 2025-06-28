@@ -108,8 +108,14 @@ namespace Pharmacist {
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.MinorWoundsThreshold.Tip".Translate());
             row.y += RowHeight;
             PharmacistSettings.medicalCare.MinorWoundsThreshold = (int) Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.MinorWoundsThreshold, 2, 20, roundTo: 1);
+			row.y += RowHeight;
 
-            Widgets.EndScrollView();
+			Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadius <= 76 ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
+			TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
+			row.y += RowHeight;
+			PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, 76, roundTo: 1);
+
+			Widgets.EndScrollView();
 
             _optionsHeight = row.yMax - canvas.yMin;
         }
@@ -147,7 +153,11 @@ namespace Pharmacist {
             pos.y += RowHeight;
 
             foreach (Population population in populations) {
-                Rect populationLabelRect = new Rect( pos.x, pos.y, CareSelectorRowLabelWidth, RowHeight );
+                if (population == Population.Entity && !ModsConfig.AnomalyActive)
+                    continue;
+				if (population == Population.Slave && !ModsConfig.IdeologyActive)
+					continue;
+				Rect populationLabelRect = new Rect( pos.x, pos.y, CareSelectorRowLabelWidth, RowHeight );
                 Text.Anchor = TextAnchor.MiddleLeft;
                 Widgets.Label(populationLabelRect, $"Fluffy.Pharmacist.Population.{population}".Translate());
                 Text.Anchor = TextAnchor.UpperLeft;

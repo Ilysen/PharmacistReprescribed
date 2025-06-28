@@ -9,8 +9,10 @@
 
 	<Fluffy.Pharmacist.Population.Colonist>Colonists</Fluffy.Pharmacist.Population.Colonist>
 	<Fluffy.Pharmacist.Population.Prisoner>Prisoners</Fluffy.Pharmacist.Population.Prisoner>
-	<Fluffy.Pharmacist.Population.Animal>Animals</Fluffy.Pharmacist.Population.Animal>
+	<Fluffy.Pharmacist.Population.Slave>Slaves</Fluffy.Pharmacist.Population.Slave>
 	<Fluffy.Pharmacist.Population.Guest>Guests</Fluffy.Pharmacist.Population.Guest>
+	<Fluffy.Pharmacist.Population.Animal>Animals</Fluffy.Pharmacist.Population.Animal>
+	<Fluffy.Pharmacist.Population.Entity>Entities</Fluffy.Pharmacist.Population.Entity>
 
 	<Fluffy.Pharmacist.Severity.Minor>Minor wounds</Fluffy.Pharmacist.Severity.Minor>
 	<Fluffy.Pharmacist.Severity.Major>Major wounds</Fluffy.Pharmacist.Severity.Major>
@@ -28,5 +30,8 @@
 	<Fluffy.Pharmacist.DiseaseThreshold.Tip>Minimum severity before a disease can be classed as potentially lethal. \n\nIf severity is higher than this threshold (and immunity is lower than the severity plus security margin), the disease is treated as a life-threathening injury.</Fluffy.Pharmacist.DiseaseThreshold.Tip>
 	<Fluffy.Pharmacist.MinorWoundsThreshold>Minor cuts threshold: {0}</Fluffy.Pharmacist.MinorWoundsThreshold>
 	<Fluffy.Pharmacist.MinorWoundsThreshold.Tip>If the number of minor cuts is greater than this threshold, they are treated as a major injury regardless of bleed rate. \n\nUseful to prevent 'death by a thousand cuts', where a large number of small cuts can cause multiple infections - and ultimately, death.</Fluffy.Pharmacist.MinorWoundsThreshold.Tip>
+	<Fluffy.Pharmacist.SearchRadius>Search radius: {0}</Fluffy.Pharmacist.SearchRadius>
+	<Fluffy.Pharmacist.SearchRadius.Tip>Doctors will only search for medicine within this radius. If none can be found, they will use only whatever they have in their inventory.</Fluffy.Pharmacist.SearchRadius.Tip>
+	<Fluffy.Pharmacist.SearchRadius.Unlimited>Unlimited</Fluffy.Pharmacist.SearchRadius.Unlimited>
 
 </LanguageData>

@@ -17,8 +17,10 @@ namespace Pharmacist {
     public enum Population {
         Colonist,
         Prisoner,
-        Guest,
-        Animal
+		Slave,
+		Guest,
+		Animal,
+        Entity
     }
 
     public static class PharmacistUtility {
@@ -77,19 +79,22 @@ namespace Pharmacist {
         }
 
         public static Population GetPopulation(this Pawn patient) {
-            if (patient.RaceProps.Animal) {
+            if (patient.IsAnimal) 
                 return Population.Animal;
-            }
 
-            if (patient.IsColonist) {
+            if (patient.IsColonist) 
                 return Population.Colonist;
-            }
 
-            if (patient.IsPrisonerOfColony) {
+            if (patient.IsPrisonerOfColony) 
                 return Population.Prisoner;
-            }
 
-            return Population.Guest;
+			if (patient.IsSlaveOfColony)
+				return Population.Slave;
+
+			if (patient.IsEntity)
+				return Population.Entity;
+
+			return Population.Guest;
         }
 
         public static MedicalCareCategory TendAdvice(Pawn patient) {

@@ -17,9 +17,9 @@ namespace Pharmacist {
     public enum Population {
         Colonist,
         Prisoner,
-		Slave,
-		Guest,
-		Animal,
+        Slave,
+        Guest,
+        Animal,
         Entity
     }
 
@@ -88,13 +88,13 @@ namespace Pharmacist {
             if (patient.IsPrisonerOfColony) 
                 return Population.Prisoner;
 
-			if (patient.IsSlaveOfColony)
-				return Population.Slave;
+            if (patient.IsSlaveOfColony)
+                return Population.Slave;
 
-			if (patient.IsEntity)
-				return Population.Entity;
+            if (patient.IsEntity)
+                return Population.Entity;
 
-			return Population.Guest;
+            return Population.Guest;
         }
 
         public static MedicalCareCategory TendAdvice(Pawn patient) {

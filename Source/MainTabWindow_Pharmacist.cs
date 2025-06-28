@@ -20,7 +20,18 @@ namespace Pharmacist {
         internal static MedicalCareCategory[] medcares = Enum.GetValues( typeof( MedicalCareCategory ) ).Cast<MedicalCareCategory>().ToArray();
 
         internal static int CareSelectorWidth => CareSelectorRowLabelWidth + (CareSelectorColumnWidth * severities.Length);
-        internal static int CareSelectorHeight => RowHeight * (populations.Length + 1);
+        internal static int CareSelectorHeight
+        {
+            get
+            {
+                int activePops = populations.Length;
+                if (!ModsConfig.IdeologyActive) // Remove entry for slaves...
+                    activePops--;
+                if (!ModsConfig.AnomalyActive || !Find.Storyteller.difficulty.AnomalyPlaystyleDef.enableAnomalyContent) // ...and/or entities too
+                    activePops--;
+                return RowHeight * (activePops + 1);
+            }
+        }
         internal static int OptionsWidth => 300;
         internal static int OptionsHeight => CareSelectorHeight;
 
@@ -108,14 +119,14 @@ namespace Pharmacist {
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.MinorWoundsThreshold.Tip".Translate());
             row.y += RowHeight;
             PharmacistSettings.medicalCare.MinorWoundsThreshold = (int) Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.MinorWoundsThreshold, 2, 20, roundTo: 1);
-			row.y += RowHeight;
+            row.y += RowHeight;
 
-			Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadius <= 76 ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
-			TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
-			row.y += RowHeight;
-			PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, 76, roundTo: 1);
+            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadius <= 76 ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
+            TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
+            row.y += RowHeight;
+            PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, 76, roundTo: 1);
 
-			Widgets.EndScrollView();
+            Widgets.EndScrollView();
 
             _optionsHeight = row.yMax - canvas.yMin;
         }
@@ -155,9 +166,9 @@ namespace Pharmacist {
             foreach (Population population in populations) {
                 if (population == Population.Entity && !ModsConfig.AnomalyActive)
                     continue;
-				if (population == Population.Slave && !ModsConfig.IdeologyActive)
-					continue;
-				Rect populationLabelRect = new Rect( pos.x, pos.y, CareSelectorRowLabelWidth, RowHeight );
+                if (population == Population.Slave && !ModsConfig.IdeologyActive)
+                    continue;
+                Rect populationLabelRect = new Rect( pos.x, pos.y, CareSelectorRowLabelWidth, RowHeight );
                 Text.Anchor = TextAnchor.MiddleLeft;
                 Widgets.Label(populationLabelRect, $"Fluffy.Pharmacist.Population.{population}".Translate());
                 Text.Anchor = TextAnchor.UpperLeft;

@@ -45,21 +45,21 @@ namespace Pharmacist {
             public int MinorWoundsThreshold {
                 protected internal set => _minorWoundsThreshold = value;
                 get => _minorWoundsThreshold;
-			}
+            }
 
-			public int SearchRadius
-			{
-				protected internal set => _searchRadius = value;
-				get => _searchRadius;
-			}
+            public int SearchRadius
+            {
+                protected internal set => _searchRadius = value;
+                get => _searchRadius;
+            }
 
-			public void ExposeData() {
+            public void ExposeData() {
                 Scribe_Collections.Look(ref _populationCare, "Populations", LookMode.Value, LookMode.Deep);
                 Scribe_Values.Look(ref _diseaseMargin, "DiseaseMargin", 0.1f);
                 Scribe_Values.Look(ref _diseaseThreshold, "DiseaseThreshold", 0.1f);
                 Scribe_Values.Look(ref _minorWoundsThreshold, "MinorWoundsThreshold", 5);
-				Scribe_Values.Look(ref _searchRadius, "SearchRadius", 76);
-			}
+                Scribe_Values.Look(ref _searchRadius, "SearchRadius", 76);
+            }
         }
 
         public class PopulationCare: IExposable {
@@ -121,24 +121,18 @@ namespace Pharmacist {
                 MedicalCareCategory.NormalOrWorse,
                 MedicalCareCategory.NormalOrWorse);
 
-            if (ModsConfig.IdeologyActive)
-			{
-				medicalCare[Population.Slave] = new PopulationCare(
-					MedicalCareCategory.HerbalOrWorse,
-					MedicalCareCategory.NormalOrWorse,
-					MedicalCareCategory.NormalOrWorse,
-					MedicalCareCategory.NormalOrWorse);
-			}
+            medicalCare[Population.Slave] = new PopulationCare(
+                MedicalCareCategory.HerbalOrWorse,
+                MedicalCareCategory.NormalOrWorse,
+                MedicalCareCategory.NormalOrWorse,
+                MedicalCareCategory.NormalOrWorse);
 
-            if (ModsConfig.AnomalyActive)
-            {
-                medicalCare[Population.Entity] = new PopulationCare(
-                    MedicalCareCategory.NoMeds,
-                    MedicalCareCategory.HerbalOrWorse,
-                    MedicalCareCategory.HerbalOrWorse,
-                    MedicalCareCategory.HerbalOrWorse);
-            }
-		}
+            medicalCare[Population.Entity] = new PopulationCare(
+                MedicalCareCategory.NoMeds,
+                MedicalCareCategory.HerbalOrWorse,
+                MedicalCareCategory.HerbalOrWorse,
+                MedicalCareCategory.HerbalOrWorse);
+        }
 
         public override void ExposeData() {
             base.ExposeData();

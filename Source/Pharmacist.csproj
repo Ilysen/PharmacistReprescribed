@@ -76,10 +76,4 @@
         <Private>False</Private>
       </Reference>
     </ItemGroup>
-    <ItemGroup>
-      <EditorConfigFiles Remove="C:\Projects\rimworld\Pharmacist\Source\.editorconfig" />
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="C:\Projects\rimworld\Pharmacist\Source\.editorconfig" />
-    </ItemGroup>
 </Project>

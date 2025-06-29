@@ -1,15 +1,18 @@
-using System.Reflection;
 using HarmonyLib;
+using System.Reflection;
 using Verse;
 
-namespace Pharmacist {
-    public class Pharmacist: Mod {
-        public Pharmacist(ModContentPack content) : base(content) {
+namespace Pharmacist
+{
+	public class Pharmacist : Mod
+	{
+		public Pharmacist(ModContentPack content) : base(content)
+		{
 #if DEBUG
-            Harmony.DEBUG = true;
+			Harmony.DEBUG = true;
 #endif
-            Harmony harmony = new Harmony("fluffy.pharmacist" );
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
-        }
-    }
+			Harmony harmony = new("fluffy.pharmacist");
+			harmony.PatchAll(Assembly.GetExecutingAssembly());
+		}
+	}
 }

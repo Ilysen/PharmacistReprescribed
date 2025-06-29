@@ -75,7 +75,7 @@ namespace Pharmacist {
                         Rect optionIconRect = new Rect( 0f, 0f, IconSize, IconSize )
                             .CenteredOnXIn( rect )
                             .CenteredOnYIn( rect );
-                        GUI.DrawTexture(optionIconRect, medcareGraphics[(int) category]);
+                        GUI.DrawTexture(optionIconRect, CareTextures[(int) category]);
                         return false;
                     }));
             }
@@ -124,7 +124,7 @@ namespace Pharmacist {
             Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadiusIsUnlimited ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
             row.y += RowHeight;
-            PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, PharmacistSettings.MAX_SEARCH_RADIUS, roundTo: 1);
+            PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, MaxSearchRadius, roundTo: 1);
 
             Widgets.EndScrollView();
 
@@ -146,7 +146,7 @@ namespace Pharmacist {
                 TooltipHandler.TipRegion(cell,
                     $"Fluffy.Pharmacist.Severity.{severity}".Translate() + "\n\n" +
                     $"Fluffy.Pharmacist.Severity.{severity}.Tip".Translate());
-                GUI.DrawTexture(headerIconRect, severityTextures[(int) severity]);
+                GUI.DrawTexture(headerIconRect, SeverityTextures[(int) severity]);
 
                 Widgets.DrawHighlightIfMouseover(cell);
                 if (Widgets.ButtonInvisible(cell)) {
@@ -196,7 +196,7 @@ namespace Pharmacist {
                         .CenteredOnYIn( cell );
 
                     Widgets.DrawHighlightIfMouseover(cell);
-                    GUI.DrawTexture(iconRect, medcareGraphics[(int) PharmacistSettings.medicalCare[population][severity]]);
+                    GUI.DrawTexture(iconRect, CareTextures[(int) PharmacistSettings.medicalCare[population][severity]]);
 
                     if (Widgets.ButtonInvisible(cell)) {
                         CreateMedicalCareSelectionFloatMenu(category => PharmacistSettings.medicalCare[population][severity] = category);

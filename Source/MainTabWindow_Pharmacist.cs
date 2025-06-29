@@ -171,6 +171,7 @@ namespace Pharmacist {
                 Rect populationLabelRect = new Rect( pos.x, pos.y, CareSelectorRowLabelWidth, RowHeight );
                 Text.Anchor = TextAnchor.MiddleLeft;
                 Widgets.Label(populationLabelRect, $"Fluffy.Pharmacist.Population.{population}".Translate());
+                TooltipHandler.TipRegion(populationLabelRect, $"Fluffy.Pharmacist.Population.{population}.Desc".Translate());
                 Text.Anchor = TextAnchor.UpperLeft;
 
                 Widgets.DrawHighlightIfMouseover(populationLabelRect);

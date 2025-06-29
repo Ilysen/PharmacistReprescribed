@@ -15,9 +15,9 @@ Pharmacist: Represcribed makes a number of tweaks and improvements to the origin
 * Doctors can be configured to only attempt to search for medicine in a specific radius. If they can't find any medicine close enough, they'll just use the next best thing they have on hand (or nothing at all).
 
 &lt;size=28&gt;Aren't there a few existing revivals of Pharmacist?&lt;/size&gt;
-There are! None of them do what this one does, though. Both the original Pharmacist and all of its unofficial updates weren't ever truly modernized, even though they worked on newer versions of RimWorld. Some specific glaring issues like blood rot received fixes on a case-by-case basis, but long-standing pain points (i.e. diseases like gut worms being treated as minor injuries even though they can seriously hamstring a colony) were never addressed.
+There are! None of them do what this one does, though. Both the original Pharmacist and all of its unofficial updates weren't ever truly modernized, even though they worked on newer versions of RimWorld. Some specific glaring issues like blood rot received fixes on a case-by-case basis, but long-standing pain points (i.e. diseases like gut worms being treated as minor injuries even though they can seriously hamstring a colony) were never addressed, and nor did it receive extra functionality to accommodate for the introduction of things like slaves or entities, which were simply let unaccounted for.
 
-Represcribed aims to be a proper modernization of the original Pharmacist, not just a resuscitation to keep it functional across versions. RimWorld's gotten a lot more complex since 2018, and the Pharmacist's advice should too! 
+So in light of this, Represcribed aims to be a proper modernization of the original Pharmacist, not just a resuscitation to keep it functional across versions. RimWorld's gotten a lot more complex since 2018, and the Pharmacist's advice should too! Care has been taken to make sure that 
 
 </description>
     <url>https://github.com/fluffy-mods/Pharmacist</url>

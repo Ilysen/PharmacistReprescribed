@@ -8,11 +8,17 @@
 	<Fluffy.Pharmacist.Settings.Tip></Fluffy.Pharmacist.Settings.Tip>
 
 	<Fluffy.Pharmacist.Population.Colonist>Colonists</Fluffy.Pharmacist.Population.Colonist>
+	<Fluffy.Pharmacist.Population.Colonist.Desc>Free members of your colony.</Fluffy.Pharmacist.Population.Colonist.Desc>
 	<Fluffy.Pharmacist.Population.Prisoner>Prisoners</Fluffy.Pharmacist.Population.Prisoner>
+	<Fluffy.Pharmacist.Population.Prisoner.Desc>Prisoners in your colony, regardless of faction.</Fluffy.Pharmacist.Population.Prisoner.Desc>
 	<Fluffy.Pharmacist.Population.Slave>Slaves</Fluffy.Pharmacist.Population.Slave>
-	<Fluffy.Pharmacist.Population.Guest>Guests</Fluffy.Pharmacist.Population.Guest>
-	<Fluffy.Pharmacist.Population.Animal>Animals</Fluffy.Pharmacist.Population.Animal>
+	<Fluffy.Pharmacist.Population.Slave.Desc>Enslaved members of your colony.</Fluffy.Pharmacist.Population.Slave.Desc>
+	<Fluffy.Pharmacist.Population.Animal>Tamed animals</Fluffy.Pharmacist.Population.Animal>
+	<Fluffy.Pharmacist.Population.Animal.Desc>Animals which have been tamed by your colony.</Fluffy.Pharmacist.Population.Animal.Desc>
 	<Fluffy.Pharmacist.Population.Entity>Entities</Fluffy.Pharmacist.Population.Entity>
+	<Fluffy.Pharmacist.Population.Entity.Desc>Anomalous entities and their variations.</Fluffy.Pharmacist.Population.Entity.Desc>
+	<Fluffy.Pharmacist.Population.Guest>Other</Fluffy.Pharmacist.Population.Guest>
+	<Fluffy.Pharmacist.Population.Guest.Desc>Any other type not listed here.</Fluffy.Pharmacist.Population.Guest.Desc>
 
 	<Fluffy.Pharmacist.Severity.Minor>Minor wounds</Fluffy.Pharmacist.Severity.Minor>
 	<Fluffy.Pharmacist.Severity.Major>Major wounds</Fluffy.Pharmacist.Severity.Major>
@@ -20,10 +26,10 @@
 	<Fluffy.Pharmacist.Severity.Operation>Operations</Fluffy.Pharmacist.Severity.Operation>
 	<Fluffy.Pharmacist.Severity.LongTerm>Ongoing conditions</Fluffy.Pharmacist.Severity.LongTerm>
 
-	<Fluffy.Pharmacist.Severity.Minor.Tip>Bruises, non-fatal diseases and small cuts.</Fluffy.Pharmacist.Severity.Minor.Tip>
-	<Fluffy.Pharmacist.Severity.Major.Tip>Large cuts and potentially fatal diseases.</Fluffy.Pharmacist.Severity.Major.Tip>
-	<Fluffy.Pharmacist.Severity.LifeThreathening.Tip>Life-threatening wounds, heart attacks and near-fatal diseases.</Fluffy.Pharmacist.Severity.LifeThreathening.Tip>
-	<Fluffy.Pharmacist.Severity.Operation.Tip>All operations, transplants and limb replacements.</Fluffy.Pharmacist.Severity.Operation.Tip>
+	<Fluffy.Pharmacist.Severity.Minor.Tip>Bruises, light bleeding, and other superficial injuries.</Fluffy.Pharmacist.Severity.Minor.Tip>
+	<Fluffy.Pharmacist.Severity.Major.Tip>Heavy bleeding or dangerous diseases.</Fluffy.Pharmacist.Severity.Major.Tip>
+	<Fluffy.Pharmacist.Severity.LifeThreathening.Tip>Life-threatening wounds, heart attacks, and near-fatal diseases.</Fluffy.Pharmacist.Severity.LifeThreathening.Tip>
+	<Fluffy.Pharmacist.Severity.Operation.Tip>All surgical operations, transplants, and limb replacements.</Fluffy.Pharmacist.Severity.Operation.Tip>
 	<Fluffy.Pharmacist.Severity.LongTerm.Tip>Illnesses that need regular tending, such as blood rot and gut worms. Also includes chronic conditions like asthma.</Fluffy.Pharmacist.Severity.LongTerm.Tip>
 
 	<Fluffy.Pharmacist.DiseaseMargin>Disease immunity margin: {0}</Fluffy.Pharmacist.DiseaseMargin>

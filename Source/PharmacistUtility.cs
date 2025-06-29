@@ -19,9 +19,9 @@ namespace Pharmacist {
         Colonist,
         Prisoner,
         Slave,
-        Guest,
         Animal,
-        Entity
+        Entity,
+        Guest,
     }
 
     public static class PharmacistUtility {

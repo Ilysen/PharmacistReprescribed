@@ -11,7 +11,8 @@ namespace Pharmacist {
         Minor,
         Major,
         LifeThreathening,
-        Operation
+        Operation,
+        LongTerm
     }
 
     public enum Population {
@@ -47,8 +48,34 @@ namespace Pharmacist {
                 return InjurySeverity.Major;
             }
 
+            if (hediffs.Any(TreatableOngoingCondition))
+                return InjurySeverity.LongTerm;
+
             // otherwise
             return InjurySeverity.Minor;
+        }
+        
+        private static bool TreatableOngoingCondition(Hediff h)
+        {
+            if (!h.TendableNow())
+                return false;
+
+            // long-term conditions -- asthma, carcinoma
+            if (h.def.chronic)
+                return true;
+
+            // needs tending to disappear -- gut worms, muscle parasites
+            if (h.TryGetComp(out HediffComp_TendDuration td) && td.TProps.disappearsAtTotalTendQuality >= 0) 
+                return true;
+
+            // needs regular tending to prevent severity from worsening over time -- blood rot, lung rot, fibrous/sensory mechanites
+            if (td != null && h.TryGetComp<HediffComp_Disappears>() != null)
+            {
+                if (td.TProps.severityPerDayTended < 0)
+                    return true;
+            }
+
+            return false;
         }
 
         private static bool PotentiallyLethalDisease(Hediff h) {

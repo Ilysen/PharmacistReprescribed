@@ -55,7 +55,7 @@ namespace Pharmacist {
             }
 
             // search for best meds
-            Thing medsFromPatient = GenClosest.ClosestThing_Global_Reachable(
+            __result = GenClosest.ClosestThing_Global_Reachable(
                 patient.Position,
                 patient.MapHeld,
                 patient.MapHeld.listerThings.ThingsInGroup(ThingRequestGroup.Medicine),
@@ -64,21 +64,6 @@ namespace Pharmacist {
                 PharmacistSettings.medicalCare.SearchRadius == 76 ? 9999 : PharmacistSettings.medicalCare.SearchRadius,
                 allowedPredicate,
                 potencyGetter);
-            Thing medsFromDoctor = GenClosest.ClosestThing_Global_Reachable(
-                healer.Position,
-                healer.Map,
-                healer.Map.listerThings.ThingsInGroup(ThingRequestGroup.Medicine),
-                PathEndMode.ClosestTouch,
-                TraverseParms.For(healer),
-                PharmacistSettings.medicalCare.SearchRadius == 76 ? 9999 : PharmacistSettings.medicalCare.SearchRadius,
-                allowedPredicate,
-                potencyGetter);
-            if (potencyGetter(medsFromPatient) > potencyGetter(medsFromDoctor))
-                __result = medsFromPatient;
-            else if (medsFromPatient.Position.DistanceTo(patient.PositionHeld) < medsFromDoctor.Position.DistanceTo(healer.Position))
-                __result = medsFromPatient;
-            else
-                __result = medsFromDoctor;
             return false;
         }
     }

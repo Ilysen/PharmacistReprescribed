@@ -18,11 +18,13 @@
 	<Fluffy.Pharmacist.Severity.Major>Major wounds</Fluffy.Pharmacist.Severity.Major>
 	<Fluffy.Pharmacist.Severity.LifeThreathening>Life-threatening wounds</Fluffy.Pharmacist.Severity.LifeThreathening>
 	<Fluffy.Pharmacist.Severity.Operation>Operations</Fluffy.Pharmacist.Severity.Operation>
+	<Fluffy.Pharmacist.Severity.LongTerm>Ongoing conditions</Fluffy.Pharmacist.Severity.LongTerm>
 
 	<Fluffy.Pharmacist.Severity.Minor.Tip>Bruises, non-fatal diseases and small cuts.</Fluffy.Pharmacist.Severity.Minor.Tip>
 	<Fluffy.Pharmacist.Severity.Major.Tip>Large cuts and potentially fatal diseases.</Fluffy.Pharmacist.Severity.Major.Tip>
 	<Fluffy.Pharmacist.Severity.LifeThreathening.Tip>Life-threatening wounds, heart attacks and near-fatal diseases.</Fluffy.Pharmacist.Severity.LifeThreathening.Tip>
 	<Fluffy.Pharmacist.Severity.Operation.Tip>All operations, transplants and limb replacements.</Fluffy.Pharmacist.Severity.Operation.Tip>
+	<Fluffy.Pharmacist.Severity.LongTerm.Tip>Illnesses that need regular tending, such as blood rot and gut worms. Also includes chronic conditions like asthma.</Fluffy.Pharmacist.Severity.LongTerm.Tip>
 
 	<Fluffy.Pharmacist.DiseaseMargin>Disease immunity margin: {0}</Fluffy.Pharmacist.DiseaseMargin>
 	<Fluffy.Pharmacist.DiseaseMargin.Tip>Security margin used when treating diseases. \n\nIf immunity is lower than disease progress plus this margin (and severity is higher than the minimum threshold), the disease is treated as a life-threathening injury.\n\nFor example, if a disease has progressed 75%, immunity is at 80%, and the margin is 10%, the disease will be classed as life-threatening. If the threshold was 5%, the disease would be classed as a major injury instead.</Fluffy.Pharmacist.DiseaseMargin.Tip>

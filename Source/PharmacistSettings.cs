@@ -66,12 +66,13 @@ namespace Pharmacist {
             private Dictionary<InjurySeverity, MedicalCareCategory> _populationCare;
 
             public PopulationCare(MedicalCareCategory minor, MedicalCareCategory major,
-                MedicalCareCategory lifethreatening, MedicalCareCategory operation) {
+                MedicalCareCategory lifethreatening, MedicalCareCategory operation, MedicalCareCategory longTerm) {
                 _populationCare = new Dictionary<InjurySeverity, MedicalCareCategory> {
                     { InjurySeverity.Minor, minor },
                     { InjurySeverity.Major, major },
                     { InjurySeverity.LifeThreathening, lifethreatening },
-                    { InjurySeverity.Operation, operation }
+                    { InjurySeverity.Operation, operation },
+                    { InjurySeverity.LongTerm, longTerm }
                 };
             }
 
@@ -80,6 +81,7 @@ namespace Pharmacist {
             }
 
             public static PopulationCare Default => new PopulationCare(
+                MedicalCareCategory.Best,
                 MedicalCareCategory.Best,
                 MedicalCareCategory.Best,
                 MedicalCareCategory.Best,
@@ -101,37 +103,43 @@ namespace Pharmacist {
                 MedicalCareCategory.HerbalOrWorse,
                 MedicalCareCategory.NormalOrWorse,
                 MedicalCareCategory.Best,
+                MedicalCareCategory.Best,
                 MedicalCareCategory.Best);
 
             medicalCare[Population.Guest] = new PopulationCare(
                 MedicalCareCategory.NoMeds,
                 MedicalCareCategory.HerbalOrWorse,
                 MedicalCareCategory.NormalOrWorse,
-                MedicalCareCategory.NormalOrWorse);
+                MedicalCareCategory.NormalOrWorse,
+                MedicalCareCategory.NoMeds);
 
             medicalCare[Population.Prisoner] = new PopulationCare(
                 MedicalCareCategory.NoMeds,
                 MedicalCareCategory.HerbalOrWorse,
                 MedicalCareCategory.NormalOrWorse,
-                MedicalCareCategory.NormalOrWorse);
+                MedicalCareCategory.NormalOrWorse,
+                MedicalCareCategory.HerbalOrWorse);
 
             medicalCare[Population.Animal] = new PopulationCare(
                 MedicalCareCategory.NoMeds,
                 MedicalCareCategory.HerbalOrWorse,
                 MedicalCareCategory.NormalOrWorse,
-                MedicalCareCategory.NormalOrWorse);
+                MedicalCareCategory.NormalOrWorse,
+                MedicalCareCategory.HerbalOrWorse);
 
             medicalCare[Population.Slave] = new PopulationCare(
                 MedicalCareCategory.HerbalOrWorse,
                 MedicalCareCategory.NormalOrWorse,
                 MedicalCareCategory.NormalOrWorse,
-                MedicalCareCategory.NormalOrWorse);
+                MedicalCareCategory.NormalOrWorse,
+                MedicalCareCategory.HerbalOrWorse);
 
             medicalCare[Population.Entity] = new PopulationCare(
                 MedicalCareCategory.NoMeds,
                 MedicalCareCategory.HerbalOrWorse,
                 MedicalCareCategory.HerbalOrWorse,
-                MedicalCareCategory.HerbalOrWorse);
+                MedicalCareCategory.HerbalOrWorse,
+                MedicalCareCategory.NoMeds);
         }
 
         public override void ExposeData() {

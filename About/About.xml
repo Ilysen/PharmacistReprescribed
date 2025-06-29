@@ -1,37 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ModMetaData>
-    <name>Pharmacist</name>
-    <author>Fluffy</author>
+    <name>Pharmacist: Represcribed</name>
+    <authors>
+		<li>Ceres</li>
+		<li>Fluffy</li>
+	</authors>
     <packageId>Fluffy.Pharmacist</packageId>
-    <description>Not all injuries are equal; pharmacist prescribes the right medicine for the job.
+    <description>A continuation of the lovely mod Pharmacist, originally created by Fluffy. For a full description of what the mod does, you can consult the original page, but in short: Pharmacist allows you to set the maximum level of medicine that can be used for different severities of injury. Doctors will use the best medicine available, depending on the target's allowed medical care and configured settings.
 
-&lt;size=28&gt;Important&lt;/size&gt;
+&lt;size=28&gt;Changes to the original&lt;/size&gt;
+Pharmacist: Represcribed makes a number of tweaks and improvements to the original Pharmacist:
+* Slaves and entities have their own tending settings. Naturally, they will only appear if Ideology and Anomaly are active, respectively.
+* Added an "Ongoing conditions" category. This includes non-fatal diseases like gut worms and fibrous mechanites, but also includes long-term conditions like blood rot and asthma; in general, anything that requires repeated tending to mitigate will fall under this category (although dangerous diseases like plague, flu, etc. are still categorized using the old system depending on their severity.) These were all previously treated as minor injuries.
+* Doctors can be configured to only attempt to search for medicine in a specific radius. If they can't find any medicine close enough, they'll just use the next best thing they have on hand (or nothing at all).
 
-Does not require a new save game
-Can safely be enabled in an ongoing save-game, disabling will cause a one-time error message upon loading the save again for the first time. The error message is mostly harmless.
+&lt;size=28&gt;Aren't there a few existing revivals of Pharmacist?&lt;/size&gt;
+There are! None of them do what this one does, though. Both the original Pharmacist and all of its unofficial updates weren't ever truly modernized, even though they worked on newer versions of RimWorld. Some specific glaring issues like blood rot received fixes on a case-by-case basis, but long-standing pain points (i.e. diseases like gut worms being treated as minor injuries even though they can seriously hamstring a colony) were never addressed.
 
-&lt;size=28&gt;Features&lt;/size&gt;
-
-Pharmacist allows you to set the maximum level of medicine that may be used for certain treatments. Doctors will use the best medicine that is available, and that is at most the level of the targets' medical care setting and the pharmacists' advice. Four levels of injuries are distinguished;
-
-- Minor (bruises, non-lethal diseases, small cuts)
-- Major (larger cuts, potentially lethal diseases)
-- Life-Threathening (extreme bleeding, heart attacks, etc.)
-- Operations (all implants, harvesting, etc.)
-
-The Pharmacists' advice for each of these can be set for Colonists, Guests, Prisoners and Animals separately with the 'Pharmacist' button on the main bar.
-
-&lt;size=28&gt;Notes&lt;/size&gt;
-
-Doctors out on the rim treat wounds in batches, and use the same medicine for each treatment in a batch. I did not want to confuse them too much, so I've left that behaviour intact. That means that the worst injury determines what medicine is used for the whole batch, and doctors may still use Glitterworld medicine for treating a bruise if they were treating a heart attack at the same time.
-
-As far as I know, the mod should be compatible with everything. Mods that directly alter the available number of medical care options may cause issues, and I think I've seen such a mod at one point, but I've been unable to find it again. If you find any incompatibilities, please let me know!
-
-I'm not quite happy with the UI yet, but for now it's functional. If you have suggestions, I'm always willing to listen.
-
-Some injuries might be diagnosed wrong, and receive medicine that is either not good enough or too good. If the treatment is too good, make sure that it wasn't part of a batch treatment (see above). If the treatment is not good enough, that's a bigger problem, and I'd like to know about what injuries are diagnosed badly.
-
-&lt;size=28&gt;Powered by Harmony&lt;/size&gt;
+Represcribed aims to be a proper modernization of the original Pharmacist, not just a resuscitation to keep it functional across versions. RimWorld's gotten a lot more complex since 2018, and the Pharmacist's advice should too! 
 
 </description>
     <url>https://github.com/fluffy-mods/Pharmacist</url>

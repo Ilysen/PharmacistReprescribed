@@ -68,7 +68,7 @@ namespace Pharmacist {
         private void CreateMedicalCareSelectionFloatMenu(Action<MedicalCareCategory> action) {
             List<FloatMenuOption> options = new List<FloatMenuOption>();
             foreach (MedicalCareCategory category in medcares) {
-                options.Add(new FloatMenuOption($"MedicalCareCategory_{category}".Translate(),
+                options.Add(new FloatMenuOption($"MedicalCareCategory_{category}".Translate().CapitalizeFirst(),
                     () => action(category),
                     extraPartWidth: 30,
                     extraPartOnGUI: rect => {
@@ -121,7 +121,7 @@ namespace Pharmacist {
             PharmacistSettings.medicalCare.MinorWoundsThreshold = (int) Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.MinorWoundsThreshold, 2, 20, roundTo: 1);
             row.y += RowHeight;
 
-            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadius <= 76 ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
+            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadius < 76 ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
             row.y += RowHeight;
             PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, 76, roundTo: 1);

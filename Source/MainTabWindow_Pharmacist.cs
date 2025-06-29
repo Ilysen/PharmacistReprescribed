@@ -121,10 +121,10 @@ namespace Pharmacist {
             PharmacistSettings.medicalCare.MinorWoundsThreshold = (int) Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.MinorWoundsThreshold, 2, 20, roundTo: 1);
             row.y += RowHeight;
 
-            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadius < 76 ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
+            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadiusIsUnlimited ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
             row.y += RowHeight;
-            PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, 76, roundTo: 1);
+            PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, PharmacistSettings.MAX_SEARCH_RADIUS, roundTo: 1);
 
             Widgets.EndScrollView();
 

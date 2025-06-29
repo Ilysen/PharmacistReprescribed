@@ -7,8 +7,10 @@ using RimWorld.Planet;
 using Verse;
 
 namespace Pharmacist {
-    public class PharmacistSettings: WorldComponent {
-        public static MedicalCare medicalCare;
+    public class PharmacistSettings: WorldComponent
+	{
+		public static readonly int MAX_SEARCH_RADIUS = 76;
+		public static MedicalCare medicalCare;
 
         public PharmacistSettings(World world) : base(world) {
             SetDefaults();
@@ -19,7 +21,7 @@ namespace Pharmacist {
             private float _diseaseMargin = 0.1f;
             private int _minorWoundsThreshold = 5;
             private float _diseaseThreshold = 0.1f;
-            private int _searchRadius = 76;
+            private int _searchRadius = MAX_SEARCH_RADIUS;
             public PopulationCare this[Population index] {
                 get {
                     if (!_populationCare.TryGetValue(index, out PopulationCare populationCare)) {
@@ -52,6 +54,10 @@ namespace Pharmacist {
                 protected internal set => _searchRadius = value;
                 get => _searchRadius;
             }
+
+            public int EffectiveSearchRadius => _searchRadius < MAX_SEARCH_RADIUS ? _searchRadius : 9999;
+
+            public bool SearchRadiusIsUnlimited => _searchRadius < MAX_SEARCH_RADIUS;
 
             public void ExposeData() {
                 Scribe_Collections.Look(ref _populationCare, "Populations", LookMode.Value, LookMode.Deep);

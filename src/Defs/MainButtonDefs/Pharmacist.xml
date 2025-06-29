@@ -5,7 +5,7 @@
     <defName>Pharmacist</defName>
     <label>pharmacist</label>
     <description>Not all wounds are equal; set guidelines for which medicine to use when.</description>
-    <tabWindowClass>Pharmacist.MainTabWindow_Pharmacist</tabWindowClass>
+    <tabWindowClass>Ilysen.PharmacistReprescribed.MainTabWindow_Pharmacist</tabWindowClass>
     <order>99</order>
   </MainButtonDef>
 

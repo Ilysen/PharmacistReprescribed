@@ -117,7 +117,7 @@ namespace Ilysen.PharmacistReprescribed
 			/// Determine whether or not the search radius mechanic should be disregarded and an unlimited range used instead.
 			/// This specifically checks for if the configured <c><see cref="SearchRadius"/></c> is equal to <c><see cref="Constants.MaxSearchRadius"/></c>.
 			/// </summary>
-			public bool SearchRadiusIsUnlimited => SearchRadius < Constants.MaxSearchRadius;
+			public bool SearchRadiusIsUnlimited => SearchRadius >= Constants.MaxSearchRadius;
 
 			public void ExposeData()
 			{

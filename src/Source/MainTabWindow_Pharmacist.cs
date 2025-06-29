@@ -121,7 +121,10 @@ namespace Ilysen.PharmacistReprescribed {
             PharmacistSettings.CareSettings.MinorWoundsThreshold = (int) Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.MinorWoundsThreshold, 2, 20, roundTo: 1);
             row.y += RowHeight;
 
-            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.CareSettings.SearchRadiusIsUnlimited ? PharmacistSettings.CareSettings.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
+            // subtracting 1 from the display here is REAL hacky, but the readout doesn't otherwise accurately represent the way it works under the hood
+            // even with a search radius of 2, the game's pathfinding will still only pick up stuff that's adjacent to the pawn, and so on
+            // this just accounts for it in a way that hopefully makes sense to the user
+            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(!PharmacistSettings.CareSettings.SearchRadiusIsUnlimited ? PharmacistSettings.CareSettings.EffectiveSearchRadius - 1 : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
             row.y += RowHeight;
             PharmacistSettings.CareSettings.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.SearchRadius, 2, MaxSearchRadius, roundTo: 1);

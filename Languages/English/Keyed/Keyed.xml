@@ -18,7 +18,7 @@
 	<Fluffy.Pharmacist.Population.Entity>Entities</Fluffy.Pharmacist.Population.Entity>
 	<Fluffy.Pharmacist.Population.Entity.Desc>Anomalous entities and their variations.</Fluffy.Pharmacist.Population.Entity.Desc>
 	<Fluffy.Pharmacist.Population.Guest>Other</Fluffy.Pharmacist.Population.Guest>
-	<Fluffy.Pharmacist.Population.Guest.Desc>Any other type not listed here.</Fluffy.Pharmacist.Population.Guest.Desc>
+	<Fluffy.Pharmacist.Population.Guest.Desc>Anything that doesn't fit into another category, such as guests or wildlife, will make use of these rules.</Fluffy.Pharmacist.Population.Guest.Desc>
 
 	<Fluffy.Pharmacist.Severity.Minor>Minor wounds</Fluffy.Pharmacist.Severity.Minor>
 	<Fluffy.Pharmacist.Severity.Major>Major wounds</Fluffy.Pharmacist.Severity.Major>
@@ -29,11 +29,11 @@
 	<Fluffy.Pharmacist.Severity.Minor.Tip>Bruises, light bleeding, and other superficial injuries.</Fluffy.Pharmacist.Severity.Minor.Tip>
 	<Fluffy.Pharmacist.Severity.Major.Tip>Heavy bleeding or dangerous diseases.</Fluffy.Pharmacist.Severity.Major.Tip>
 	<Fluffy.Pharmacist.Severity.LifeThreathening.Tip>Life-threatening wounds, heart attacks, and near-fatal diseases.</Fluffy.Pharmacist.Severity.LifeThreathening.Tip>
-	<Fluffy.Pharmacist.Severity.Operation.Tip>All surgical operations, transplants, and limb replacements.</Fluffy.Pharmacist.Severity.Operation.Tip>
-	<Fluffy.Pharmacist.Severity.LongTerm.Tip>Illnesses that need regular tending, such as blood rot and gut worms. Also includes chronic conditions like asthma.</Fluffy.Pharmacist.Severity.LongTerm.Tip>
+	<Fluffy.Pharmacist.Severity.Operation.Tip>Any and all surgical operations, regardless of type.</Fluffy.Pharmacist.Severity.Operation.Tip>
+	<Fluffy.Pharmacist.Severity.LongTerm.Tip>Non-urgent illnesses that need regular tending, such as blood rot and gut worms. Also includes chronic conditions like asthma.</Fluffy.Pharmacist.Severity.LongTerm.Tip>
 
 	<Fluffy.Pharmacist.DiseaseMargin>Disease immunity margin: {0}</Fluffy.Pharmacist.DiseaseMargin>
-	<Fluffy.Pharmacist.DiseaseMargin.Tip>Security margin used when treating diseases. \n\nIf immunity is lower than disease progress plus this margin (and severity is higher than the minimum threshold), the disease is treated as a life-threathening injury.\n\nFor example, if a disease has progressed 75%, immunity is at 80%, and the margin is 10%, the disease will be classed as life-threatening. If the threshold was 5%, the disease would be classed as a major injury instead.</Fluffy.Pharmacist.DiseaseMargin.Tip>
+	<Fluffy.Pharmacist.DiseaseMargin.Tip>Security margin used when treating diseases. \n\nIf immunity is lower than disease progress plus this margin (and severity is higher than the minimum threshold), the disease is treated as a life-threatening injury.\n\nFor example, if a disease has progressed 75%, immunity is at 80%, and the margin is 10%, the disease will be classed as life-threatening. If the threshold was 5%, the disease would be classed as a major injury instead.</Fluffy.Pharmacist.DiseaseMargin.Tip>
 	<Fluffy.Pharmacist.DiseaseThreshold>Disease minimum severity threshold: {0}</Fluffy.Pharmacist.DiseaseThreshold>
 	<Fluffy.Pharmacist.DiseaseThreshold.Tip>Minimum severity before a disease can be classed as potentially lethal. \n\nIf severity is higher than this threshold (and immunity is lower than the severity plus security margin), the disease is treated as a life-threathening injury.</Fluffy.Pharmacist.DiseaseThreshold.Tip>
 	<Fluffy.Pharmacist.MinorWoundsThreshold>Minor cuts threshold: {0}</Fluffy.Pharmacist.MinorWoundsThreshold>

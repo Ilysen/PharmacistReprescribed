@@ -9,15 +9,16 @@
     <description>A continuation of the lovely mod Pharmacist, originally created by Fluffy. For a full description of what the mod does, you can consult the original page, but in short: Pharmacist allows you to set the maximum level of medicine that can be used for different severities of injury. Doctors will use the best medicine available, depending on the target's allowed medical care and configured settings.
 
 &lt;size=28&gt;Changes to the original&lt;/size&gt;
-Pharmacist: Represcribed makes a number of tweaks and improvements to the original Pharmacist:
-* Slaves and entities have their own tending settings. Naturally, they will only appear if Ideology and Anomaly are active, respectively.
-* Added an "Ongoing conditions" category. This includes non-fatal diseases like gut worms and fibrous mechanites, but also includes long-term conditions like blood rot and asthma; in general, anything that requires repeated tending to mitigate will fall under this category (although dangerous diseases like plague, flu, etc. are still categorized using the old system depending on their severity.) These were all previously treated as minor injuries.
-* Doctors can be configured to only attempt to search for medicine in a specific radius. If they can't find any medicine close enough, they'll just use the next best thing they have on hand (or nothing at all).
+Represcribed makes a number of tweaks and improvements to the original Pharmacist:
+* Population categories have been tweaked to more closely match vanilla designations. "Animal" is now "Tamed animals"; "Guest" is now "Other", to more accurately describe its functionality. Slaves and entities have their own settings that will appear if Ideology or Anomaly are active, respectively.
+* Added an "Ongoing conditions" classification. This includes non-fatal diseases like gut worms and fibrous mechanites, but also includes long-term illnesses like blood rot and asthma. It does *not* include immunity-based diseases like plague, flu, and infections; Pharmacist still prescribes for those based on severity and immunity gain progress. Otherwise, anything that must be regularly tended will generally fall into this category.
+* Adds a configurable medicine search radius, defaulting to unlimited (as in vanilla). Doctors will only grab medicine within this many tiles; if they can't find any, they'll default to manual care instead.
+* Re-enables a vanilla feature allowing doctors to grab medicine from pack animals if they can't find it anywhere else. This was actually added all the way back in the Ideology days (version 1.3.3159), but Pharmacist's code was never updated to account for it.
 
 &lt;size=28&gt;Aren't there a few existing revivals of Pharmacist?&lt;/size&gt;
-There are! None of them do what this one does, though. Both the original Pharmacist and all of its unofficial updates weren't ever truly modernized, even though they worked on newer versions of RimWorld. Some specific glaring issues like blood rot received fixes on a case-by-case basis, but long-standing pain points (i.e. diseases like gut worms being treated as minor injuries even though they can seriously hamstring a colony) were never addressed, and nor did it receive extra functionality to accommodate for the introduction of things like slaves or entities, which were simply let unaccounted for.
+There are, but none of them really did what I wanted. Both the original Pharmacist and all of its unofficial updates weren't ever truly modernized, even though they worked on newer versions of the game. Some specific glaring issues received fixes on a case-by-case basis, but many long-standing pain points (i.e. diseases like gut worms being treated as minor injuries even though they can seriously hamstring a colony) were never addressed, and nor did the mod ever receive extra functionality to accommodate the DLCs.
 
-So in light of this, Represcribed aims to be a proper modernization of the original Pharmacist, not just a resuscitation to keep it functional across versions. RimWorld's gotten a lot more complex since 2018, and the Pharmacist's advice should too! Care has been taken to make sure that 
+So that's why I made this one! Represcribed aims to be a proper modernization of the original Pharmacist - not just a resuscitation to keep it functional across versions. RimWorld's gotten a lot more complex since 2018, so the Pharmacist's advice should too, right?
 
 </description>
     <url>https://github.com/fluffy-mods/Pharmacist</url>

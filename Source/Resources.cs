@@ -20,7 +20,7 @@ namespace Pharmacist {
                 ContentFinder<Texture2D>.Get( "UI/Icons/finger" ),
                 ContentFinder<Texture2D>.Get( "UI/Icons/blood" ),
                 ContentFinder<Texture2D>.Get( "UI/Icons/heart" ),
-                ContentFinder<Texture2D>.Get( "UI/Icons/scalpel" )
+                ContentFinder<Texture2D>.Get( "UI/Icons/scalpel" ),
                 ContentFinder<Texture2D>.Get( "UI/Icons/clock" ) //<a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by Ilham Fitrotul Hayat - Flaticon</a>
             };
             pharmacistIcon = ContentFinder<Texture2D>.Get("UI/Icons/hospital");

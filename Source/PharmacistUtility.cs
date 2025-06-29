@@ -106,7 +106,7 @@ namespace Pharmacist {
         }
 
         public static Population GetPopulation(this Pawn patient) {
-            if (patient.IsAnimal) 
+            if (patient.IsAnimal && patient.Faction == Faction.OfPlayer)
                 return Population.Animal;
 
             if (patient.IsColonist) 

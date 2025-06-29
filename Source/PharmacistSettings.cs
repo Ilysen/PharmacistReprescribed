@@ -19,7 +19,7 @@ namespace Pharmacist {
             private float _diseaseMargin = 0.1f;
             private int _minorWoundsThreshold = 5;
             private float _diseaseThreshold = 0.1f;
-            private int _searchRadius = 12;
+            private int _searchRadius = 76;
             public PopulationCare this[Population index] {
                 get {
                     if (!_populationCare.TryGetValue(index, out PopulationCare populationCare)) {
@@ -128,15 +128,15 @@ namespace Pharmacist {
                 MedicalCareCategory.HerbalOrWorse);
 
             medicalCare[Population.Slave] = new PopulationCare(
+                MedicalCareCategory.NoMeds,
                 MedicalCareCategory.HerbalOrWorse,
-                MedicalCareCategory.NormalOrWorse,
                 MedicalCareCategory.NormalOrWorse,
                 MedicalCareCategory.NormalOrWorse,
                 MedicalCareCategory.HerbalOrWorse);
 
             medicalCare[Population.Entity] = new PopulationCare(
                 MedicalCareCategory.NoMeds,
-                MedicalCareCategory.HerbalOrWorse,
+                MedicalCareCategory.NoMeds,
                 MedicalCareCategory.HerbalOrWorse,
                 MedicalCareCategory.HerbalOrWorse,
                 MedicalCareCategory.NoMeds);

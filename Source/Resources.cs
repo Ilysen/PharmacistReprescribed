@@ -6,7 +6,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace Pharmacist
+namespace Ilysen.PharmacistReprescribed
 {
 	[StaticConstructorOnStartup]
 	public static class Resources

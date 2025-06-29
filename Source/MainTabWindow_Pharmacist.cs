@@ -7,10 +7,10 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
-using static Pharmacist.Constants;
-using static Pharmacist.Resources;
+using static Ilysen.PharmacistReprescribed.Constants;
+using static Ilysen.PharmacistReprescribed.Resources;
 
-namespace Pharmacist {
+namespace Ilysen.PharmacistReprescribed {
     public class MainTabWindow_Pharmacist: MainTabWindow {
         public override Vector2 InitialSize => new Vector2(
             CareSelectorWidth + OptionsWidth + Constants.Margin + (2 * Margin),

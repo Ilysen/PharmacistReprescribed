@@ -2,7 +2,8 @@
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <AssemblyTitle>Pharmacist</AssemblyTitle>
+        <AssemblyTitle>PharmacistReprescribed</AssemblyTitle>
+		<RootNamespace>Ilysen.PharmacistReprescribed</RootNamespace>
         <Product>Pharmacist</Product>
         <Copyright>Copyright © 2017-2021</Copyright>
         <OutputPath>..\Assemblies\</OutputPath>

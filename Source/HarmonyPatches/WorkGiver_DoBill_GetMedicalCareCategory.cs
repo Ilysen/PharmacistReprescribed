@@ -5,7 +5,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace Pharmacist.HarmonyPatches
+namespace Ilysen.PharmacistReprescribed.HarmonyPatches
 {
 	[HarmonyPatch(typeof(WorkGiver_DoBill), "GetMedicalCareCategory")]
 	public static class WorkGiver_DoBill_GetMedicalCareCategory

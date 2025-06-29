@@ -2,155 +2,208 @@
 // PharmacistUtility.cs
 // 2017-02-11
 
-using System.Linq;
 using RimWorld;
+using System.Linq;
 using Verse;
 
-namespace Pharmacist {
-    public enum InjurySeverity {
-        Minor,
-        Major,
-        LifeThreathening,
-        Operation,
-        LongTerm
-    }
-
-    public enum Population {
-        Colonist,
-        Prisoner,
-        Slave,
-        Animal,
-        Entity,
-        Guest,
-    }
-
-    public static class PharmacistUtility {
-        public static InjurySeverity GetTendSeverity(this Pawn patient) {
-            if (!HealthAIUtility.ShouldBeTendedNowByPlayer(patient)) //    .ShouldBeTendedNow( patient ) )
+namespace Pharmacist
 {
-                return InjurySeverity.Minor;
-            }
+	/// <summary>
+	/// A list of all injurity severity categories that the pharmacist can diagnose.
+	/// This is typically calculated for a given health state in <c><see cref="PharmacistUtility.GetTendSeverity(Pawn)"/></c>.
+	/// </summary>
+	public enum InjurySeverity
+	{
+		Minor,
+		Major,
+		LifeThreathening,
+		Operation,
+		LongTerm
+	}
 
-            System.Collections.Generic.List<Hediff> hediffs = patient.health.hediffSet.hediffs;
-            int ticksToDeathDueToBloodLoss = HealthUtility.TicksUntilDeathDueToBloodLoss( patient );
+	/// <summary>
+	/// A list of all the population groups that a pawn can fall into.
+	/// This is determined exclusively in <c><see cref="PharmacistUtility.GetPopulation(Pawn)"/></c>.
+	/// </summary>
+	/// TODO one day - make these all subclass instances or something; ideally it'd be something more extensible
+	public enum Population
+	{
+		Colonist,
+		Prisoner,
+		Slave,
+		Animal,
+		Entity,
+		Guest,
+	}
 
-            // going to die in <6 hours, or any tendable is life threathening
-            if (ticksToDeathDueToBloodLoss <= GenDate.TicksPerHour * 6 ||
-                 hediffs.Any(h => h.CurStage?.lifeThreatening ?? false) ||
-                 hediffs.Any(NearLethalDisease)) {
-                return InjurySeverity.LifeThreathening;
-            }
+	/// <summary>
+	/// Contains most of the pharmacist's functionality, including diagnosis, population group calculation, and so on.
+	/// </summary>
+	public static class PharmacistUtility
+	{
+		/// <summary>
+		/// This is the meat of how the Pharmacist determines what tending is needed.
+		/// This method assesses the pawn's health state and determines a severity category based on what it detects.
+		/// </summary>
+		public static InjurySeverity GetTendSeverity(this Pawn patient)
+		{
+			if (!HealthAIUtility.ShouldBeTendedNowByPlayer(patient))
+				return InjurySeverity.Minor;
 
-            // going to die in <12 hours, or any immunity < severity and can be fatal, or death by a thousand cuts imminent
-            if (ticksToDeathDueToBloodLoss <= GenDate.TicksPerHour * 12 ||
-                 hediffs.Any(PotentiallyLethalDisease) ||
-                 DeathByAThousandCuts(patient)) {
-                return InjurySeverity.Major;
-            }
+			System.Collections.Generic.List<Hediff> hediffs = patient.health.hediffSet.hediffs;
+			int ticksToDeathDueToBloodLoss = HealthUtility.TicksUntilDeathDueToBloodLoss(patient);
 
-            if (hediffs.Any(TreatableOngoingCondition))
-                return InjurySeverity.LongTerm;
+			// Any of the following is considered life-threatening:
+			// * <=6 hours until death from blood loss
+			// * Any hediff with a life-threatening stage
+			// * Any disease that could be lethal if not treated well
+			if (ticksToDeathDueToBloodLoss <= GenDate.TicksPerHour * 6 ||
+				 hediffs.Any(h => h.CurStage?.lifeThreatening ?? false) ||
+				 hediffs.Any(NearLethalDisease))
+				return InjurySeverity.LifeThreathening;
 
-            // otherwise
-            return InjurySeverity.Minor;
-        }
-        
-        private static bool TreatableOngoingCondition(Hediff h)
-        {
-            if (!h.TendableNow())
-                return false;
+			// One step down, any of the following is considered a major wound:
+			// * <=12 hours until death from blood loss
+			// * Any disease that has the potential to be deadly, but isn't currently life-threatening
+			// * A high number of wounds that can potentially become infected
+			if (ticksToDeathDueToBloodLoss <= GenDate.TicksPerHour * 12 ||
+				 hediffs.Any(PotentiallyLethalDisease) ||
+				 DeathByAThousandCuts(patient))
+			{
+				return InjurySeverity.Major;
+			}
 
-            // long-term conditions -- asthma, carcinoma
-            if (h.def.chronic)
-                return true;
+			// If non-major, then check for ongoing conditions; see the relevant method for more documentation on selection criteria
+			if (hediffs.Any(TreatableOngoingCondition))
+				return InjurySeverity.LongTerm;
 
-            // needs tending to disappear -- gut worms, muscle parasites
-            if (h.TryGetComp(out HediffComp_TendDuration td) && td.TProps.disappearsAtTotalTendQuality >= 0) 
-                return true;
+			// And if we don't find any of these, then we're presumably only lightly injured
+			return InjurySeverity.Minor;
+		}
 
-            // needs regular tending to prevent severity from worsening over time -- blood rot, lung rot, fibrous/sensory mechanites
-            if (td != null && h.TryGetComp<HediffComp_Disappears>() != null)
-            {
-                if (td.TProps.severityPerDayTended < 0)
-                    return true;
-            }
+		/// <summary>
+		/// Checks for any tendable condition that falls into one of the following categories:<br/>
+		/// * Chronic (asthma, carcinoma);<br/>
+		/// * Disappears after a specific amount of total tend quality (gut worms, muscles parasites, etc.);<br/>
+		/// * Needs regular tending to prevent severity from worsening (blood rot, lung rot, etc.)
+		/// </summary>
+		private static bool TreatableOngoingCondition(Hediff h)
+		{
+			if (!h.TendableNow())
+				return false;
 
-            return false;
-        }
+			// long-term conditions -- asthma, carcinoma
+			if (h.def.chronic)
+				return true;
 
-        private static bool PotentiallyLethalDisease(Hediff h) {
-            if (!h.TendableNow()) {
-                return false;
-            }
+			// needs tending to disappear -- gut worms, muscle parasites
+			if (h.TryGetComp(out HediffComp_TendDuration td) && td.TProps.disappearsAtTotalTendQuality >= 0)
+				return true;
 
-            if (h.def.lethalSeverity <= 0f) {
-                return false;
-            }
+			// needs regular tending to prevent severity from worsening over time -- blood rot, lung rot, fibrous/sensory mechanites
+			if (td != null && h.TryGetComp<HediffComp_Disappears>() != null)
+			{
+				if (td.TProps.severityPerDayTended < 0)
+					return true;
+			}
 
-            HediffComp_Immunizable compImmunizable = h.TryGetComp<HediffComp_Immunizable>();
-            return compImmunizable != null;
-        }
+			return false;
+		}
 
-        private static bool NearLethalDisease(Hediff h) {
-            HediffComp_Immunizable compImmunizable = h.TryGetComp<HediffComp_Immunizable>();
-            return PotentiallyLethalDisease(h) &&
-                   !compImmunizable.FullyImmune &&
-                   h.Severity > PharmacistSettings.medicalCare.DiseaseThreshold &&
-                   compImmunizable.Immunity < PharmacistSettings.medicalCare.DiseaseMargin + h.Severity;
-        }
+		/// <summary>
+		/// Checks for any tendable disease that can potentially be fatal.
+		/// </summary>
+		private static bool PotentiallyLethalDisease(Hediff h)
+		{
+			if (!h.TendableNow())
+				return false;
 
-        private static bool DeathByAThousandCuts(Pawn patient) {
-            // number of bleeding wounds > threshold
-            return patient.health.hediffSet.hediffs.Count(hediff => hediff.Bleeding) >
-                   PharmacistSettings.medicalCare.MinorWoundsThreshold;
-        }
+			if (h.def.lethalSeverity <= 0f)
+				return false;
 
-        public static Population GetPopulation(this Pawn patient) {
-            if (patient.IsAnimal && patient.Faction == Faction.OfPlayer)
-                return Population.Animal;
+			HediffComp_Immunizable compImmunizable = h.TryGetComp<HediffComp_Immunizable>();
+			return compImmunizable != null;
+		}
 
-            if (patient.IsColonist) 
-                return Population.Colonist;
+		/// <summary>
+		/// Checks for any potentially fatal disease whose severity is greater than its immunity by the configured disease margin.
+		/// </summary>
+		private static bool NearLethalDisease(Hediff h)
+		{
+			HediffComp_Immunizable compImmunizable = h.TryGetComp<HediffComp_Immunizable>();
+			return PotentiallyLethalDisease(h) &&
+				   !compImmunizable.FullyImmune &&
+				   h.Severity > PharmacistSettings.medicalCare.DiseaseThreshold &&
+				   compImmunizable.Immunity < PharmacistSettings.medicalCare.DiseaseMargin + h.Severity;
+		}
 
-            if (patient.IsPrisonerOfColony) 
-                return Population.Prisoner;
+		/// <summary>
+		/// Checks if a given patient has a number of infectable wounds greater than the configured threshold.
+		/// Pawns that are immune to wound infections (ghouls, Perfect Immunity gene, etc) will be skipped.
+		/// </summary>
+		private static bool DeathByAThousandCuts(Pawn patient)
+		{
+			if (patient.health.immunity.DiseaseContractChanceFactor(HediffDefOf.WoundInfection) == 0f)
+				return false;
+			return patient.health.hediffSet.hediffs.Count(hediff => hediff.TryGetComp<HediffComp_Infecter>() != null) >
+				   PharmacistSettings.medicalCare.MinorWoundsThreshold;
+		}
 
-            if (patient.IsSlaveOfColony)
-                return Population.Slave;
+		/// <summary>
+		/// Determines what population group this pawn falls into.
+		/// </summary>
+		public static Population GetPopulation(this Pawn patient)
+		{
+			if (patient.IsAnimal && patient.Faction == Faction.OfPlayer)
+				return Population.Animal;
 
-            if (patient.IsEntity)
-                return Population.Entity;
+			if (patient.IsColonist)
+				return Population.Colonist;
 
-            return Population.Guest;
-        }
+			if (patient.IsPrisonerOfColony)
+				return Population.Prisoner;
 
-        public static MedicalCareCategory TendAdvice(Pawn patient) {
-            InjurySeverity severity = patient.GetTendSeverity();
-            return TendAdvice(patient, severity);
-        }
+			if (patient.IsSlaveOfColony)
+				return Population.Slave;
 
-        public static MedicalCareCategory TendAdvice(Pawn patient, InjurySeverity severity) {
-            Population population = patient.GetPopulation();
+			if (patient.IsEntity)
+				return Population.Entity;
 
-            MedicalCareCategory pharmacist = PharmacistSettings.medicalCare[population][severity];
-            MedicalCareCategory playerSetting = patient?.playerSettings?.medCare ?? MedicalCareCategory.Best;
+			return Population.Guest;
+		}
+
+		/// <summary>
+		/// Wrapper for <c><see cref="TendAdvice(Pawn, InjurySeverity)"/></c> that calculates severity automatically instead of taking it as an argument.
+		/// </summary>
+		public static MedicalCareCategory TendAdvice(Pawn patient)
+		{
+			InjurySeverity severity = patient.GetTendSeverity();
+			return TendAdvice(patient, severity);
+		}
+
+		/// <summary>
+		/// Determines the appropriate medical care type for the provided pawn and injurity severity. Capped to the patient's maximum allowed medicine.
+		/// Unless a specific type of injury is determined in advance (such as with surgery), consider using <c><see cref="TendAdvice(Pawn)"/></c>
+		/// instead of this method.
+		/// </summary>
+		public static MedicalCareCategory TendAdvice(Pawn patient, InjurySeverity severity)
+		{
+			Population population = patient.GetPopulation();
+
+			MedicalCareCategory pharmacist = PharmacistSettings.medicalCare[population][severity];
+			MedicalCareCategory playerSetting = patient?.playerSettings?.medCare ?? MedicalCareCategory.Best;
 
 #if DEBUG
-            Log.Message(
-                "Pharmacist :: Advice" +
-                $"\n\tpatient: {patient?.LabelShort}" +
-                $"\n\tpopulation: {population}" +
-                $"\n\tseverity: {severity}" +
-                $"\n\tplayerSettings: {playerSetting}" +
-                $"\n\tpharmacist: {pharmacist}");
+			Log.Message(
+				"Pharmacist :: Advice" +
+				$"\n\tpatient: {patient?.LabelShort}" +
+				$"\n\tpopulation: {population}" +
+				$"\n\tseverity: {severity}" +
+				$"\n\tplayerSettings: {playerSetting}" +
+				$"\n\tpharmacist: {pharmacist}");
 #endif
 
-            // return lowest
-            if (pharmacist < playerSetting) {
-                return pharmacist;
-            }
-
-            return playerSetting;
-        }
-    }
+			return pharmacist < playerSetting ? pharmacist : playerSetting;
+		}
+	}
 }

@@ -42,13 +42,13 @@ namespace Pharmacist.HarmonyPatches
 				patient.MapHeld.listerThings.ThingsInGroup(ThingRequestGroup.Medicine),
 				PathEndMode.ClosestTouch,
 				TraverseParms.For(healer),
-				PharmacistSettings.medicalCare.EffectiveSearchRadius,
+				PharmacistSettings.CareSettings.EffectiveSearchRadius,
 				IsPrescribedMedicine,
 				GetMedicalPotency);
 
 			// If there's nothing near the patient, look around the doctor instead
 			// This will only happen if a search radius is set, since otherwise we've naturally already searched the whole map
-			if (__result == null && !PharmacistSettings.medicalCare.SearchRadiusIsUnlimited)
+			if (__result == null && !PharmacistSettings.CareSettings.SearchRadiusIsUnlimited)
 			{
 				__result = GenClosest.ClosestThing_Global_Reachable(
 					healer.Position,
@@ -56,7 +56,7 @@ namespace Pharmacist.HarmonyPatches
 					healer.Map.listerThings.ThingsInGroup(ThingRequestGroup.Medicine),
 					PathEndMode.ClosestTouch,
 					TraverseParms.For(healer),
-					PharmacistSettings.medicalCare.EffectiveSearchRadius,
+					PharmacistSettings.CareSettings.EffectiveSearchRadius,
 					IsPrescribedMedicine,
 					GetMedicalPotency);
 			}
@@ -86,8 +86,8 @@ namespace Pharmacist.HarmonyPatches
 				return p.inventory.innerContainer.Count > 0 &&
 					!p.IsForbidden(healer) &&
 					healer.CanReach(p, PathEndMode.OnCell, Danger.Some) &&
-					(p.Position.DistanceTo(healer.Position) <= PharmacistSettings.medicalCare.EffectiveSearchRadius ||
-					p.Position.DistanceTo(patient.PositionHeld) <= PharmacistSettings.medicalCare.EffectiveSearchRadius);
+					(p.Position.DistanceTo(healer.Position) <= PharmacistSettings.CareSettings.EffectiveSearchRadius ||
+					p.Position.DistanceTo(patient.PositionHeld) <= PharmacistSettings.CareSettings.EffectiveSearchRadius);
 			}
 
 			float GetMedicalPotency(Thing t) => t.def.GetStatValueAbstract(StatDefOf.MedicalPotency);

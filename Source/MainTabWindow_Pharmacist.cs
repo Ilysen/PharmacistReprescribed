@@ -37,7 +37,7 @@ namespace Pharmacist {
 
         public override void DoWindowContents(Rect canvas) {
             // todo: remove (debugging)
-            if (PharmacistSettings.medicalCare == null) {
+            if (PharmacistSettings.CareSettings == null) {
                 PharmacistSettings.SetDefaults();
             }
 
@@ -103,28 +103,28 @@ namespace Pharmacist {
 
             Widgets.BeginScrollView(canvas, ref _optionsScrollPosition, viewRect);
 
-            Widgets.Label(row, "Fluffy.Pharmacist.DiseaseMargin".Translate(PharmacistSettings.medicalCare.DiseaseMargin.ToStringPercent()));
+            Widgets.Label(row, "Fluffy.Pharmacist.DiseaseMargin".Translate(PharmacistSettings.CareSettings.DiseaseMargin.ToStringPercent()));
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.DiseaseMargin.Tip".Translate());
             row.y += RowHeight;
-            PharmacistSettings.medicalCare.DiseaseMargin = Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.DiseaseMargin, 0f, 1f, roundTo: .01f);
+            PharmacistSettings.CareSettings.DiseaseMargin = Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.DiseaseMargin, 0f, 1f, roundTo: .01f);
             row.y += RowHeight;
 
-            Widgets.Label(row, "Fluffy.Pharmacist.DiseaseThreshold".Translate(PharmacistSettings.medicalCare.DiseaseThreshold.ToStringPercent()));
+            Widgets.Label(row, "Fluffy.Pharmacist.DiseaseThreshold".Translate(PharmacistSettings.CareSettings.DiseaseThreshold.ToStringPercent()));
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.DiseaseThreshold.Tip".Translate());
             row.y += RowHeight;
-            PharmacistSettings.medicalCare.DiseaseThreshold = Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.DiseaseThreshold, 0f, 1f, roundTo: .01f);
+            PharmacistSettings.CareSettings.DiseaseThreshold = Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.DiseaseThreshold, 0f, 1f, roundTo: .01f);
             row.y += RowHeight;
 
-            Widgets.Label(row, "Fluffy.Pharmacist.MinorWoundsThreshold".Translate(PharmacistSettings.medicalCare.MinorWoundsThreshold));
+            Widgets.Label(row, "Fluffy.Pharmacist.MinorWoundsThreshold".Translate(PharmacistSettings.CareSettings.MinorWoundsThreshold));
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.MinorWoundsThreshold.Tip".Translate());
             row.y += RowHeight;
-            PharmacistSettings.medicalCare.MinorWoundsThreshold = (int) Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.MinorWoundsThreshold, 2, 20, roundTo: 1);
+            PharmacistSettings.CareSettings.MinorWoundsThreshold = (int) Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.MinorWoundsThreshold, 2, 20, roundTo: 1);
             row.y += RowHeight;
 
-            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.medicalCare.SearchRadiusIsUnlimited ? PharmacistSettings.medicalCare.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
+            Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(PharmacistSettings.CareSettings.SearchRadiusIsUnlimited ? PharmacistSettings.CareSettings.SearchRadius : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
             TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
             row.y += RowHeight;
-            PharmacistSettings.medicalCare.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.medicalCare.SearchRadius, 2, MaxSearchRadius, roundTo: 1);
+            PharmacistSettings.CareSettings.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.SearchRadius, 2, MaxSearchRadius, roundTo: 1);
 
             Widgets.EndScrollView();
 
@@ -152,7 +152,7 @@ namespace Pharmacist {
                 if (Widgets.ButtonInvisible(cell)) {
                     CreateMedicalCareSelectionFloatMenu(category => {
                         foreach (Population population in populations) {
-                            PharmacistSettings.medicalCare[population][severity] = category;
+                            PharmacistSettings.CareSettings[population][severity] = category;
                         }
                     });
                 }
@@ -178,7 +178,7 @@ namespace Pharmacist {
                 if (Widgets.ButtonInvisible(populationLabelRect)) {
                     CreateMedicalCareSelectionFloatMenu(category => {
                         foreach (InjurySeverity severity in severities) {
-                            PharmacistSettings.medicalCare[population][severity] = category;
+                            PharmacistSettings.CareSettings[population][severity] = category;
                         }
                     });
                 }
@@ -196,10 +196,10 @@ namespace Pharmacist {
                         .CenteredOnYIn( cell );
 
                     Widgets.DrawHighlightIfMouseover(cell);
-                    GUI.DrawTexture(iconRect, CareTextures[(int) PharmacistSettings.medicalCare[population][severity]]);
+                    GUI.DrawTexture(iconRect, CareTextures[(int) PharmacistSettings.CareSettings[population][severity]]);
 
                     if (Widgets.ButtonInvisible(cell)) {
-                        CreateMedicalCareSelectionFloatMenu(category => PharmacistSettings.medicalCare[population][severity] = category);
+                        CreateMedicalCareSelectionFloatMenu(category => PharmacistSettings.CareSettings[population][severity] = category);
                     }
 
                     pos.x += CareSelectorColumnWidth;

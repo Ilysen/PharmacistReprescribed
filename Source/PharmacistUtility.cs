@@ -133,8 +133,8 @@ namespace Pharmacist
 			HediffComp_Immunizable compImmunizable = h.TryGetComp<HediffComp_Immunizable>();
 			return PotentiallyLethalDisease(h) &&
 				   !compImmunizable.FullyImmune &&
-				   h.Severity > PharmacistSettings.medicalCare.DiseaseThreshold &&
-				   compImmunizable.Immunity < PharmacistSettings.medicalCare.DiseaseMargin + h.Severity;
+				   h.Severity > PharmacistSettings.CareSettings.DiseaseThreshold &&
+				   compImmunizable.Immunity < PharmacistSettings.CareSettings.DiseaseMargin + h.Severity;
 		}
 
 		/// <summary>
@@ -146,7 +146,7 @@ namespace Pharmacist
 			if (patient.health.immunity.DiseaseContractChanceFactor(HediffDefOf.WoundInfection) == 0f)
 				return false;
 			return patient.health.hediffSet.hediffs.Count(hediff => hediff.TryGetComp<HediffComp_Infecter>() != null) >
-				   PharmacistSettings.medicalCare.MinorWoundsThreshold;
+				   PharmacistSettings.CareSettings.MinorWoundsThreshold;
 		}
 
 		/// <summary>
@@ -190,7 +190,7 @@ namespace Pharmacist
 		{
 			Population population = patient.GetPopulation();
 
-			MedicalCareCategory pharmacist = PharmacistSettings.medicalCare[population][severity];
+			MedicalCareCategory pharmacist = PharmacistSettings.CareSettings[population][severity];
 			MedicalCareCategory playerSetting = patient?.playerSettings?.medCare ?? MedicalCareCategory.Best;
 
 #if DEBUG

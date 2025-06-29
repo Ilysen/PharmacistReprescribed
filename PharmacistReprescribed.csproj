@@ -4,9 +4,9 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <AssemblyTitle>PharmacistReprescribed</AssemblyTitle>
 		<RootNamespace>Ilysen.PharmacistReprescribed</RootNamespace>
-        <Product>Pharmacist</Product>
-        <Copyright>Copyright © 2017-2021</Copyright>
-        <OutputPath>..\Assemblies\</OutputPath>
+        <Product>PharmacistReprescribed</Product>
+        <Copyright>Copyright © 2025</Copyright>
+        <OutputPath>src\Assemblies\</OutputPath>
         <DebugType>portable</DebugType>
         <LangVersion>9</LangVersion>
     </PropertyGroup>
@@ -76,5 +76,8 @@
       <Reference Update="System.Xml.Linq">
         <Private>False</Private>
       </Reference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="src\Assemblies\PharmacistReprescribed.dll" />
     </ItemGroup>
 </Project>

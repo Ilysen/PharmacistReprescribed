@@ -4,6 +4,7 @@
 
 using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 using Verse.AI;
@@ -31,12 +32,18 @@ namespace Ilysen.PharmacistReprescribed.HarmonyPatches
 				return false;
 
 			// Check the inventory first...
-			__result = GetMedsFromInventory(healer.inventory.innerContainer);
-			if (__result != null || onlyUseInventory)
+			Thing medsFromInventory = GetMedsFromInventory(healer.inventory.innerContainer);
+			if (onlyUseInventory)
+			{
+				__result = medsFromInventory;
 				return false;
+			}
+			List<Thing> candidateMeds = new();
+			if (medsFromInventory != null)
+				candidateMeds.Add(medsFromInventory);
 
-			// ...then look around the patient if we can't find anything
-			__result = GenClosest.ClosestThing_Global_Reachable(
+			// ...then look around the patient for something better, if possible
+			Thing medsFromNearPatient = GenClosest.ClosestThing_Global_Reachable(
 				patient.PositionHeld,
 				patient.MapHeld,
 				patient.MapHeld.listerThings.ThingsInGroup(ThingRequestGroup.Medicine),
@@ -45,23 +52,28 @@ namespace Ilysen.PharmacistReprescribed.HarmonyPatches
 				PharmacistSettings.CareSettings.EffectiveSearchRadius,
 				IsPrescribedMedicine,
 				GetMedicalPotency);
+			if (medsFromInventory != null)
+				candidateMeds.Add(medsFromNearPatient);
 
-			// If there's nothing near the patient, look around the doctor instead
+			// Also look around the doctor instead
 			// This will only happen if a search radius is set, since otherwise we've naturally already searched the whole map
-			if (__result == null && !PharmacistSettings.CareSettings.SearchRadiusIsUnlimited)
-			{
-				__result = GenClosest.ClosestThing_Global_Reachable(
-					healer.Position,
-					healer.Map,
-					healer.Map.listerThings.ThingsInGroup(ThingRequestGroup.Medicine),
-					PathEndMode.ClosestTouch,
-					TraverseParms.For(healer),
-					PharmacistSettings.CareSettings.EffectiveSearchRadius,
-					IsPrescribedMedicine,
-					GetMedicalPotency);
-			}
+			Thing medsFromNearDoctor = PharmacistSettings.CareSettings.SearchRadiusIsUnlimited ? null : GenClosest.ClosestThing_Global_Reachable(
+				healer.Position,
+				healer.Map,
+				healer.Map.listerThings.ThingsInGroup(ThingRequestGroup.Medicine),
+				PathEndMode.ClosestTouch,
+				TraverseParms.For(healer),
+				PharmacistSettings.CareSettings.EffectiveSearchRadius,
+				IsPrescribedMedicine,
+				GetMedicalPotency);
+			if (medsFromNearDoctor != null)
+				candidateMeds.Add(medsFromNearDoctor);
 
-			// Still nothing. Check nearby animal inventories if we're allowed
+			// Then look through all of the medicine we've found nearby and pick the best available one
+			if (candidateMeds.Count != 0)
+				__result = candidateMeds.MaxBy(GetMedicalPotency);
+
+			// We found nothing usable. Check nearby animal inventories if we're allowed
 			if (__result == null && healer.IsColonist)
 			{
 				foreach (Pawn pawn in healer.Map.mapPawns.SpawnedColonyAnimals.Where(IsAllowedAnimal))

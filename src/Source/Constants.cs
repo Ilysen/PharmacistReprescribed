@@ -1,7 +1,7 @@
 // Constants.cs
 // Copyright Karel Kroeze, 2018-2018
 
-namespace Ilysen.PharmacistReprescribed
+namespace Pharmacist
 {
 	public static class Constants
 	{

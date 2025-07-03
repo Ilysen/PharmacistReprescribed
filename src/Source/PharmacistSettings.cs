@@ -6,7 +6,7 @@ using RimWorld.Planet;
 using System.Collections.Generic;
 using Verse;
 
-namespace Ilysen.PharmacistReprescribed
+namespace Pharmacist
 {
 	/// <summary>
 	/// Initiates and houses the pharmacist's settings.<br/>

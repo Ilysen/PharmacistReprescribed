@@ -2,7 +2,7 @@ using HarmonyLib;
 using System.Reflection;
 using Verse;
 
-namespace Ilysen.PharmacistReprescribed
+namespace Pharmacist
 {
 	public class Pharmacist : Mod
 	{
@@ -11,7 +11,7 @@ namespace Ilysen.PharmacistReprescribed
 #if DEBUG
 			Harmony.DEBUG = true;
 #endif
-			Harmony harmony = new("Ilysen.PharmacistReprescribed");
+			Harmony harmony = new("fluffy.pharmacist");
 			harmony.PatchAll(Assembly.GetExecutingAssembly());
 		}
 	}

@@ -5,7 +5,7 @@
 		<li>Ceres</li>
 		<li>Fluffy</li>
 	</authors>
-    <packageId>Ilysen.PharmacistReprescribed</packageId>
+    <packageId>Fluffy.Pharmacist</packageId>
     <description>A continuation of the lovely mod Pharmacist, originally created by Fluffy. For a full description of what the mod does, you can consult the original page, but in short: Pharmacist allows you to set the maximum level of medicine that can be used for different severities of injury. Doctors will use the best medicine available, depending on the target's allowed medical care and configured settings.
 
 &lt;size=28&gt;Changes to the original&lt;/size&gt;

@@ -9,7 +9,7 @@ using System.Linq;
 using Verse;
 using Verse.AI;
 
-namespace Ilysen.PharmacistReprescribed.HarmonyPatches
+namespace Pharmacist.HarmonyPatches
 {
 	[HarmonyPatch(typeof(HealthAIUtility))]
 	public class HealthAIUtility_Patch

@@ -6,7 +6,7 @@ using RimWorld;
 using System.Linq;
 using Verse;
 
-namespace Ilysen.PharmacistReprescribed
+namespace Pharmacist
 {
 	/// <summary>
 	/// A list of all injurity severity categories that the pharmacist can diagnose.

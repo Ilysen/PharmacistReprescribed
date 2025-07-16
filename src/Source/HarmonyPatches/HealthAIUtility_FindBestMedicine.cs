@@ -16,7 +16,7 @@ namespace Pharmacist.HarmonyPatches
 	{
 		/// <summary>
 		/// Replaces the vanilla logic for medicine selection with our own bespoke stuff.
-		/// It's almost certainly possible to use transpilers for a more surgical approach, but I'm not that good and the original mod wasn't either, so :bleh:
+		/// It's almost certainly possible to use transpilers for a more surgical approach, but I'm not that good and the original mod took this approach, so :bleh:
 		/// Otherwise, this has been written to conform to vanilla functionality as closely as possible
 		/// </summary>
 		[HarmonyPrefix]
@@ -42,6 +42,9 @@ namespace Pharmacist.HarmonyPatches
 			if (medsFromInventory != null)
 				candidateMeds.Add(medsFromInventory);
 
+#if DEBUG
+			Log.Message($"Effective search radius: {PharmacistSettings.CareSettings.EffectiveSearchRadius} (actual: {PharmacistSettings.CareSettings.SearchRadius})");
+#endif
 			// ...then look around the patient for something better, if possible
 			Thing medsFromNearPatient = GenClosest.ClosestThing_Global_Reachable(
 				patient.PositionHeld,
@@ -52,7 +55,7 @@ namespace Pharmacist.HarmonyPatches
 				PharmacistSettings.CareSettings.EffectiveSearchRadius,
 				IsPrescribedMedicine,
 				GetMedicalPotency);
-			if (medsFromInventory != null)
+			if (medsFromNearPatient != null)
 				candidateMeds.Add(medsFromNearPatient);
 
 			// Also look around the doctor instead

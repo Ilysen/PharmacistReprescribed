@@ -1,7 +1,7 @@
 Pharmacist: Represcribed is a derivative work of Pharmacist, by Fluffy:
 * All code written *prior to* commit `a4399cff346155b54263df072a791d5f59ccaf85` is copyright (c) 2020 Fluffy, under the [MIT license](https://opensource.org/licenses/MIT).
 * All code written *after* the aforementioned commit is copyright (c) 2025 Ilysen, also under the MIT license.
-* Sprite assets used in this mod are sourced from [Font Awesome 6.7.2](https://fontawesome.com/icons), under the [CC-BY-4.0 license](https://creativecommons.org/licenses/by/4.0/).
+* Sprite assets used in this mod are sourced from [Font Awesome 6.7.2](https://fontawesome.com/icons), under the [CC-BY-SA 4.0 license](https://creativecommons.org/licenses/by/4.0/).
 All relevant license texts can be found below. The original copyright notice has been maintained as-is for posterity.
 
 =======================================================================

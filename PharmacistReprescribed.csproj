@@ -80,6 +80,6 @@
       <None Include="src\Assemblies\PharmacistReprescribed.dll" />
     </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="copy /Y &quot;$(SolutionDir)LICENSE.md&quot; &quot;$(SolutionDir)\src\About\LICENSE.md&quot;" />
+      <Exec Command="copy /Y &quot;$(SolutionDir)LICENSE.md&quot; &quot;$(SolutionDir)\src\LICENSE.md&quot;" />
     </Target>
 </Project>

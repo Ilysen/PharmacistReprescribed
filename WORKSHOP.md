@@ -39,6 +39,7 @@ If you run into issues, please provide a log somewhere! The [url=https://steamco
 I won't guarantee that any of these will be worked on, but they're on my bucket list:
 [list]
 [*]An option to use the worst possible medicine for surgical operations that are guaranteed to succeed, like anesthetizing. This is a bit difficult to pull off for a few reasons, but it's on my radar.
+[*]Remake the UI. This was on Fluffy's list, but it's a bit daunting so I can see why it never materialized. If nothing else, I'd like to move it from a whole architect tab to just giving it a button alongside the "Set defaults..." dropdown when configuring a pawn's allowed medicine.
 [/list]
 
 [h2]Donations[/h2]

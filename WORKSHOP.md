@@ -2,7 +2,7 @@
 
 ___
 
-
+```bbcode
 [b]Last tested on game version:[/b] 1.6.4518
 
 A continuation/fork/successor of the lovely mod Pharmacist, originally created by Fluffy. For a full description of what the mod does, you can consult the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1365242717]original page[/url], but in short: Pharmacist allows you to set the maximum level of medicine that can be used for different severities of injury. Doctors will use the best medicine available, depending on the target's allowed medical care and configured settings.
@@ -45,3 +45,4 @@ I won't guarantee that any of these will be worked on, but they're on my bucket 
 You can find the Ko-fi link of the original creator, Fluffy, here: https://ko-fi.com/fluffymods. I'm not sure if they're still active, but they're the one who made the mod in the first place!
 
 As for me, I am not in this for the cash and I am never going to stop maintaining things even if I don't earn from them, but if you feel like giving support, you can use my own Ko-fi link: https://ko-fi.com/ceresetal
+```

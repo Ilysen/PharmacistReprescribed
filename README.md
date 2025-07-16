@@ -7,3 +7,9 @@ Like the original mod, the code for Pharmacist: Represcribed is licensed under t
 Sprite assets used in this mod are sourced from [Font Awesome 6.7.2](https://fontawesome.com/icons), under the [CC-BY-4.0 license](https://creativecommons.org/licenses/by/4.0/).
 
 The full text of both licenses can be found in [LICENSE.md](LICENSE.md).
+
+## Changelog
+
+### 16 July, 2025
+#### Version 0.1
+* Initial release.

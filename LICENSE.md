@@ -4,6 +4,7 @@ Pharmacist: Represcribed is a derivative work of Pharmacist, by Fluffy:
 * Sprite assets used in this mod are sourced from [Font Awesome 6.7.2](https://fontawesome.com/icons), under the [CC-BY-SA 4.0 license](https://creativecommons.org/licenses/by/4.0/).
 All relevant license texts can be found below. The original copyright notice has been maintained as-is for posterity.
 
+```
 =======================================================================
 The following MIT license applies to the software and any documentation.
 Any original content (e.g. text, imagery or sounds) are licensed under 
@@ -410,3 +411,4 @@ the avoidance of doubt, this paragraph does not form part of the
 public licenses.
 
 Creative Commons may be contacted at creativecommons.org.
+```

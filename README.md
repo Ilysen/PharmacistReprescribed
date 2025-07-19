@@ -1,3 +1,5 @@
+.
+
 # Pharmacist: Represcribed
 
 This is a modern revival of the lovely RimWorld mod [Pharmacist](https://github.com/fluffy-mods/Pharmacist), by Fluffy. For more thorough description including screenshots, check the [Steam Workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=3527418098).

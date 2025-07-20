@@ -30,10 +30,15 @@ There are, but none of them really did what I wanted. As far as I can tell, the 
 
 So that's why I made this one! Represcribed aims to be a proper modernization of the original Pharmacist - not just a resuscitation to keep it functional across versions. RimWorld's gotten a lot more complex since 2018, so the Pharmacist's advice should too, right?
 
-[h2]Compatibility & Troubleshooting[/h2]
+[h2]Compatibility & troubleshooting[/h2]
 [b][i]I have not tested compatibility too much, so you're in unmapped waters.[/i][/b] I made this fork for personal use, and I tend to run a pretty light mod list. I've tried to keep the code as clean as possible, but if you run into any compatibility issues, let me know and I'll take a look.
 
 If you run into issues, please provide a log somewhere! The [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Log Publisher from HugsLib[/url] mod will automate this for you, but pastebin or something works just fine too.
+
+[h2]Contributions[/h2]
+Pharmacist: Represcribed has received contributions from the following people:
+[list]
+[*][b]FerchuDev:[/b] Updated Spanish translations
 
 [h2]Future ideas[/h2]
 I won't guarantee that any of these will be worked on, but they're on my bucket list:

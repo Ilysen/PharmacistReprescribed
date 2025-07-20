@@ -27,12 +27,9 @@ namespace Pharmacist.HarmonyPatches
 			if (patient.playerSettings == null || patient.playerSettings.medCare <= MedicalCareCategory.NoMeds || Medicine.GetMedicineCountToFullyHeal(patient) <= 0)
 				return false;
 
-			// Skip analysis if we're doing a drafted tend straight from the inventory
-			// onlyUseInventory is technically only utilized during drafted tends, so the draft check here should be unnecessary,
-			// but it never hurts to be extra sure
-			if (healer.Drafted)
-				return true;
-			MedicalCareCategory pharmacistAdvice = PharmacistUtility.TendAdvice(patient);
+			// Skip analysis if we're doing a drafted tend; use the patient's maximum care level instead, like vanilla
+			// We could just return true here for the same effect, but continuing with the override allows us to still respect search radius, etc.
+			MedicalCareCategory pharmacistAdvice = healer.Drafted ? patient.playerSettings.medCare : PharmacistUtility.TendAdvice(patient);
 			if (pharmacistAdvice <= MedicalCareCategory.NoMeds)
 				return false;
 

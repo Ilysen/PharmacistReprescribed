@@ -10,6 +10,11 @@ The full text of both licenses can be found in [LICENSE.md](LICENSE.md).
 
 ## Changelog
 
+### TBD
+#### Version 0.1.2
+* Further refined changes the from 0.1.1. Drafted tend should nominally function similar to vanilla now - using the target's medical care setting, and using medicine from the inventory first - while still respecting search radius and other stuff.
+* Merge pull request #1: Updated Spanish Translations (thank you!)
+
 ### 19 July, 2025
 #### Version 0.1.1
 * Drafted tending will skip pharmacist settings; in such cases, doctors will always use the best medicine they have on hand.

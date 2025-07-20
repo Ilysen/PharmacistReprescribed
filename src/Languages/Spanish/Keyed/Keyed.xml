@@ -25,7 +25,7 @@
 <Fluffy.Pharmacist.Severity.Major.Tip>Sangrados abundantes o enfermedades peligrosas.</Fluffy.Pharmacist.Severity.Major.Tip>
 <Fluffy.Pharmacist.Severity.LifeThreathening.Tip>Heridas mortales, ataques al corazón y enfermedades casi letales.</Fluffy.Pharmacist.Severity.LifeThreathening.Tip>
 <Fluffy.Pharmacist.Severity.Operation.Tip>Cualquier tipo de operación quirúrgica, sea cual sea su tipo.</Fluffy.Pharmacist.Severity.Operation.Tip>
-<Fluffy.Pharmacist.Severity.LongTerm.Tip>Enfermedades no urgentes que requieren cuidados regulares, como podredumbre de sangre o lombrices intestinales. También incluye enfermedades crónicas como el asma.</Fluffy.Pharmacist.Severity.LongTerm.Tip>
+<Fluffy.Pharmacist.Severity.LongTerm.Tip>Enfermedades no urgentes que requieren cuidados regulares, como putrefacción sanguínea o lombrices intestinales. También incluye enfermedades crónicas como el asma.</Fluffy.Pharmacist.Severity.LongTerm.Tip>
 <Fluffy.Pharmacist.DiseaseMargin>Margen de inmunidad frente a enfermedades: {0}</Fluffy.Pharmacist.DiseaseMargin>
 <Fluffy.Pharmacist.DiseaseMargin.Tip>Margen de seguridad utilizado al tratar enfermedades.\n\nSi la inmunidad es menor que el progreso de la enfermedad más este margen (y la gravedad es mayor que el umbral mínimo), la enfermedad se trata como una lesión mortal.\n\nPor ejemplo, si una enfermedad ha progresado un 75%, la inmunidad está al 80% y el margen es del 10%, la enfermedad se clasificará como mortal. Si el umbral fuera del 5%, se clasificaría como una herida grave en su lugar.</Fluffy.Pharmacist.DiseaseMargin.Tip>
 <Fluffy.Pharmacist.DiseaseThreshold>Umbral mínimo de gravedad de enfermedad: {0}</Fluffy.Pharmacist.DiseaseThreshold>

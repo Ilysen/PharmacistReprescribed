@@ -30,7 +30,7 @@ namespace Pharmacist.HarmonyPatches
 			// Skip analysis if we're doing a drafted tend straight from the inventory
 			// onlyUseInventory is technically only utilized during drafted tends, so the draft check here should be unnecessary,
 			// but it never hurts to be extra sure
-			if (onlyUseInventory && healer.Drafted)
+			if (healer.Drafted)
 				return true;
 			MedicalCareCategory pharmacistAdvice = PharmacistUtility.TendAdvice(patient);
 			if (pharmacistAdvice <= MedicalCareCategory.NoMeds)

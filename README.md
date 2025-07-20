@@ -10,6 +10,10 @@ The full text of both licenses can be found in [LICENSE.md](LICENSE.md).
 
 ## Changelog
 
+### 19 July, 2025
+#### Version 0.1.1
+* Drafted tending will skip pharmacist settings; in such cases, doctors will always use the best medicine they have on hand.
+
 ### 16 July, 2025
 #### Version 0.1
 * Initial release.

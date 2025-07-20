@@ -6,7 +6,7 @@
 		<li>Fluffy</li>
 	</authors>
 	<packageId>Fluffy.Pharmacist</packageId>
-	<description>A continuation of the lovely mod Pharmacist, originally created by Fluffy. Doctors will use the best medicine available, depending on the target's allowed medical care and configured settings.</description>
+	<description>A continuation of the lovely mod Pharmacist, originally created by Fluffy. This mod allows you to set the maximum level of medicine that can be used for different severities of injury. Doctors will use the best medicine available, depending on the target's allowed medical care and configured settings.</description>
 	<url>https://github.com/Ilysen/PharmacistReprescribed</url>
 	<modVersion>0.1</modVersion>
 	<supportedVersions>

@@ -11,6 +11,8 @@ You can find this mod's source code on [url=https://github.com/Ilysen/Pharmacist
 
 Sprite assets are sourced from [url=https://fontawesome.com/icons]Font Awesome 6.7.2[/url], under the CC-BY-SA 4.0 license.
 
+[i]Note:[/i] If you're using a save that used a previous version of Pharmacist, settings might not migrate cleanly, which could result in some weird behavior. This can apparently be permanently fixed by just changing any setting in the tab though!
+
 [h2]Changes to the original[/h2]
 Represcribed makes a number of tweaks and improvements to the original Pharmacist:
 [list]

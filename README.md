@@ -10,6 +10,10 @@ The full text of both licenses can be found in [LICENSE.md](LICENSE.md).
 
 ## Changelog
 
+### 4 December, 2025
+#### Version 0.1.3
+* Some minor refactoring to handle drafted tends in parity with vanilla. Pawns without care settings will now use the best possible medicine *from the healer's inventory only* and then switch to tending by hand once it's expended.
+
 ### 27 July, 2025
 #### Version 0.1.2
 * Further refined changes the from 0.1.1. Drafted tend should nominally function similar to vanilla now - using the target's medical care setting, and using medicine from the inventory first - while still respecting search radius and other stuff.

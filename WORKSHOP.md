@@ -3,7 +3,7 @@
 ___
 
 ```bbcode
-[b]Last tested on game version:[/b] 1.6.4518
+[b]Last tested on game version:[/b] 1.6.4633
 
 A continuation/fork/successor of the lovely mod Pharmacist, originally created by Fluffy. For a full description of what the mod does, you can consult the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1365242717]original page[/url], but in short: Pharmacist allows you to set the maximum level of medicine that can be used for different severities of injury. Doctors will determine which medicine to use based on the type of wound, the Pharmacist's configured settings, and the target's individually-configured medical care (as in vanilla.)
 

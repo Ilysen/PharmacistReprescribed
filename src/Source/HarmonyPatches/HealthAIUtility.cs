@@ -168,5 +168,21 @@ namespace Pharmacist.HarmonyPatches
 				return null;
 			}
 		}
+
+		[HarmonyPostfix]
+		[HarmonyPatch(nameof(HealthAIUtility.ShouldEverReceiveMedicalCareFromPlayer))]
+		public static void ShouldEverReceiveMedicalCareFromPlayer_Postfix(Pawn pawn, ref bool __result)
+		{
+#if DEBUG
+			Log.Message("shouldeverreceive init");
+#endif
+			if (__result && PharmacistUtility.TendAdvice(pawn) == MedicalCareCategory.NoCare)
+			{
+#if DEBUG
+				Log.Message("pharmacist says no care, adjusting to false");
+#endif
+				__result = false;
+			}
+		}
 	}
 }

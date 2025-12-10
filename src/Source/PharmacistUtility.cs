@@ -47,8 +47,9 @@ namespace Pharmacist
 		/// </summary>
 		public static InjurySeverity GetTendSeverity(this Pawn patient)
 		{
-			if (!HealthAIUtility.ShouldBeTendedNowByPlayer(patient))
-				return InjurySeverity.Minor;
+#if DEBUG
+			Log.Message("Checking tend severity");
+#endif
 
 			System.Collections.Generic.List<Hediff> hediffs = patient.health.hediffSet.hediffs;
 			int ticksToDeathDueToBloodLoss = HealthUtility.TicksUntilDeathDueToBloodLoss(patient);
@@ -177,7 +178,13 @@ namespace Pharmacist
 		/// </summary>
 		public static MedicalCareCategory TendAdvice(Pawn patient)
 		{
+#if DEBUG
+			Log.Message("Getting tend advice...");
+#endif
 			InjurySeverity severity = patient.GetTendSeverity();
+#if DEBUG
+			Log.Message("Injury severity: " + severity.ToString());
+#endif
 			return TendAdvice(patient, severity);
 		}
 

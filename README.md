@@ -10,6 +10,10 @@ The full text of both licenses can be found in [LICENSE.md](LICENSE.md).
 
 ## Changelog
 
+### 9 December, 2025
+#### Version 0.1.4
+* Tentative fix for the "No care" setting not working as intended. Might have issues.
+
 ### 4 December, 2025
 #### Version 0.1.3
 * Some minor refactoring to handle drafted tends in parity with vanilla. Pawns without care settings will now use the best possible medicine *from the healer's inventory only* and then switch to tending by hand once it's expended.

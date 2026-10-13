@@ -1,5 +1,4 @@
 # Pharmacist: Represcribed
-
 This is a modern revival of the lovely RimWorld mod [Pharmacist](https://github.com/fluffy-mods/Pharmacist), by Fluffy. For more thorough description including screenshots, check the [Steam Workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=3527418098).
 
 Like the original mod, the code for Pharmacist: Represcribed is licensed under the [MIT License](https://opensource.org/licenses/MIT). **All** code prior to commit `a4399cff346155b54263df072a791d5f59ccaf85` was written by the original author - Fluffy - and a number of contributors; you can see a full list on [the original repository](https://github.com/fluffy-mods/Pharmacist/graphs/contributors). My work stands on their shoulders, and wouldn't exist without all the stuff they did to make it possible.
@@ -8,8 +7,12 @@ Sprite assets used in this mod are sourced from [Font Awesome 6.7.2](https://fon
 
 The full text of both licenses can be found in [LICENSE.md](LICENSE.md).
 
-## Changelog
+### To-Do
+This is only for me (the author) to keep track of stuff that I may or may not work on at some point. Don't take this as a roadmap or anything like that!
+- Setting to turn off main button
+- Move settings popup to a button in the health window
 
+## Changelog
 ### 9 December, 2025
 #### Version 0.1.4
 * Tentative fix for the "No care" setting not working as intended. Might have issues.

@@ -27,9 +27,9 @@ namespace Ceres.PharmacistReprescribed
 			var ls = new Listing_Standard();
 			ls.Begin(inRect);
 			ls.CheckboxLabeled(
-				Translator.Translate("Fluffy.Ceres.PharmacistReprescribed.Settings.ToggleTab"),
+				Translator.Translate("Ceres.PharmacistReprescribed.Settings.ToggleTab"),
 				ref Settings.HideTab,
-				Translator.Translate("Fluffy.Ceres.PharmacistReprescribed.Settings.ToggleTab.Tooltip")
+				Translator.Translate("Ceres.PharmacistReprescribed.Settings.ToggleTab.Tooltip")
 			);
 			ls.End();
 		}

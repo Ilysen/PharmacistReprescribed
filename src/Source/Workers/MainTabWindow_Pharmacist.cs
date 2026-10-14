@@ -59,7 +59,7 @@ namespace Ceres.PharmacistReprescribed
 				OptionsHeight);
 
 			Text.Font = GameFont.Medium;
-			Widgets.Label(titleRect, "Fluffy.Ceres.PharmacistReprescribed.Settings.Title".Translate());
+			Widgets.Label(titleRect, "Ceres.PharmacistReprescribed.Settings.Title".Translate());
 			Text.Font = GameFont.Small;
 
 			DrawCareSelectors(careSelectorRect);
@@ -108,20 +108,20 @@ namespace Ceres.PharmacistReprescribed
 
 			Widgets.BeginScrollView(canvas, ref _optionsScrollPosition, viewRect);
 
-			Widgets.Label(row, "Fluffy.Pharmacist.DiseaseMargin".Translate(PharmacistSettings.CareSettings.DiseaseMargin.ToStringPercent()));
-			TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.DiseaseMargin.Tip".Translate());
+			Widgets.Label(row, "Ceres.PharmacistReprescribed.DiseaseMargin".Translate(PharmacistSettings.CareSettings.DiseaseMargin.ToStringPercent()));
+			TooltipHandler.TipRegion(row, "Ceres.PharmacistReprescribed.DiseaseMargin.Tip".Translate());
 			row.y += RowHeight;
 			PharmacistSettings.CareSettings.DiseaseMargin = Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.DiseaseMargin, 0f, 1f, roundTo: .01f);
 			row.y += RowHeight;
 
-			Widgets.Label(row, "Fluffy.Pharmacist.DiseaseThreshold".Translate(PharmacistSettings.CareSettings.DiseaseThreshold.ToStringPercent()));
-			TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.DiseaseThreshold.Tip".Translate());
+			Widgets.Label(row, "Ceres.PharmacistReprescribed.DiseaseThreshold".Translate(PharmacistSettings.CareSettings.DiseaseThreshold.ToStringPercent()));
+			TooltipHandler.TipRegion(row, "Ceres.PharmacistReprescribed.DiseaseThreshold.Tip".Translate());
 			row.y += RowHeight;
 			PharmacistSettings.CareSettings.DiseaseThreshold = Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.DiseaseThreshold, 0f, 1f, roundTo: .01f);
 			row.y += RowHeight;
 
-			Widgets.Label(row, "Fluffy.Pharmacist.MinorWoundsThreshold".Translate(PharmacistSettings.CareSettings.MinorWoundsThreshold));
-			TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.MinorWoundsThreshold.Tip".Translate());
+			Widgets.Label(row, "Ceres.PharmacistReprescribed.MinorWoundsThreshold".Translate(PharmacistSettings.CareSettings.MinorWoundsThreshold));
+			TooltipHandler.TipRegion(row, "Ceres.PharmacistReprescribed.MinorWoundsThreshold.Tip".Translate());
 			row.y += RowHeight;
 			PharmacistSettings.CareSettings.MinorWoundsThreshold = (int)Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.MinorWoundsThreshold, 2, 20, roundTo: 1);
 			row.y += RowHeight;
@@ -129,8 +129,8 @@ namespace Ceres.PharmacistReprescribed
 			// subtracting 1 from the display here is REAL hacky, but the readout doesn't otherwise accurately represent the way it works under the hood
 			// even with a search radius of 2, the game's pathfinding will still only pick up stuff that's adjacent to the pawn, and so on
 			// this just accounts for it in a way that hopefully makes sense to the user
-			Widgets.Label(row, "Fluffy.Pharmacist.SearchRadius".Translate(!PharmacistSettings.CareSettings.SearchRadiusIsUnlimited ? PharmacistSettings.CareSettings.EffectiveSearchRadius - 1 : "Fluffy.Pharmacist.SearchRadius.Unlimited".Translate()));
-			TooltipHandler.TipRegion(row, "Fluffy.Pharmacist.SearchRadius.Tip".Translate());
+			Widgets.Label(row, "Ceres.PharmacistReprescribed.SearchRadius".Translate(!PharmacistSettings.CareSettings.SearchRadiusIsUnlimited ? PharmacistSettings.CareSettings.EffectiveSearchRadius - 1 : "Ceres.PharmacistReprescribed.SearchRadius.Unlimited".Translate()));
+			TooltipHandler.TipRegion(row, "Ceres.PharmacistReprescribed.SearchRadius.Tip".Translate());
 			row.y += RowHeight;
 			PharmacistSettings.CareSettings.SearchRadius = (int)Widgets.HorizontalSlider(row, PharmacistSettings.CareSettings.SearchRadius, 2, MaxSearchRadius, roundTo: 1);
 
@@ -154,8 +154,8 @@ namespace Ceres.PharmacistReprescribed
 					.CenteredOnYIn(cell);
 
 				TooltipHandler.TipRegion(cell,
-					$"Fluffy.Pharmacist.Severity.{severity}".Translate() + "\n\n" +
-					$"Fluffy.Pharmacist.Severity.{severity}.Tip".Translate());
+					$"Ceres.PharmacistReprescribed.Severity.{severity}".Translate() + "\n\n" +
+					$"Ceres.PharmacistReprescribed.Severity.{severity}.Tip".Translate());
 				GUI.DrawTexture(headerIconRect, SeverityTextures[(int)severity]);
 
 				Widgets.DrawHighlightIfMouseover(cell);
@@ -184,8 +184,8 @@ namespace Ceres.PharmacistReprescribed
 					continue;
 				Rect populationLabelRect = new Rect(pos.x, pos.y, CareSelectorRowLabelWidth, RowHeight);
 				Text.Anchor = TextAnchor.MiddleLeft;
-				Widgets.Label(populationLabelRect, $"Fluffy.Pharmacist.Population.{population}".Translate());
-				TooltipHandler.TipRegion(populationLabelRect, $"Fluffy.Pharmacist.Population.{population}.Desc".Translate());
+				Widgets.Label(populationLabelRect, $"Ceres.PharmacistReprescribed.Population.{population}".Translate());
+				TooltipHandler.TipRegion(populationLabelRect, $"Ceres.PharmacistReprescribed.Population.{population}.Desc".Translate());
 				Text.Anchor = TextAnchor.UpperLeft;
 
 				Widgets.DrawHighlightIfMouseover(populationLabelRect);

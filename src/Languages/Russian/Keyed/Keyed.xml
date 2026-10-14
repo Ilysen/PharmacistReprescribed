@@ -1,32 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<Fluffy.Pharmacist>Фармацевт</Fluffy.Pharmacist>
-	<Fluffy.Pharmacist.Tip>Не все раненые равны; установите уровень лекарст для каждого из них.</Fluffy.Pharmacist.Tip>
+	<Ceres.PharmacistReprescribed>Фармацевт</Ceres.PharmacistReprescribed>
+	<Ceres.PharmacistReprescribed.Tip>Не все раненые равны; установите уровень лекарст для каждого из них.</Ceres.PharmacistReprescribed.Tip>
 
-	<Fluffy.Pharmacist.Settings.Title>Настройка Фармацевта</Fluffy.Pharmacist.Settings.Title>
-	<Fluffy.Pharmacist.Settings.Tip></Fluffy.Pharmacist.Settings.Tip>
+	<Ceres.PharmacistReprescribed.Settings.Title>Настройка Фармацевта</Ceres.PharmacistReprescribed.Settings.Title>
+	<Ceres.PharmacistReprescribed.Settings.Tip></Ceres.PharmacistReprescribed.Settings.Tip>
 
-	<Fluffy.Pharmacist.Population.Colonist>Колонист</Fluffy.Pharmacist.Population.Colonist>
-	<Fluffy.Pharmacist.Population.Prisoner>Заключенный</Fluffy.Pharmacist.Population.Prisoner>
-	<Fluffy.Pharmacist.Population.Animal>Животные</Fluffy.Pharmacist.Population.Animal>
-	<Fluffy.Pharmacist.Population.Guest>Гости</Fluffy.Pharmacist.Population.Guest>
+	<Ceres.PharmacistReprescribed.Population.Colonist>Колонист</Ceres.PharmacistReprescribed.Population.Colonist>
+	<Ceres.PharmacistReprescribed.Population.Prisoner>Заключенный</Ceres.PharmacistReprescribed.Population.Prisoner>
+	<Ceres.PharmacistReprescribed.Population.Animal>Животные</Ceres.PharmacistReprescribed.Population.Animal>
+	<Ceres.PharmacistReprescribed.Population.Guest>Гости</Ceres.PharmacistReprescribed.Population.Guest>
 
-	<Fluffy.Pharmacist.Severity.Minor>Небольшая травма</Fluffy.Pharmacist.Severity.Minor>
-	<Fluffy.Pharmacist.Severity.Major>Серьезная травма</Fluffy.Pharmacist.Severity.Major>
-	<Fluffy.Pharmacist.Severity.LifeThreathening>Жестокая травма</Fluffy.Pharmacist.Severity.LifeThreathening>
-	<Fluffy.Pharmacist.Severity.Operation>Операции</Fluffy.Pharmacist.Severity.Operation>
+	<Ceres.PharmacistReprescribed.Severity.Minor>Небольшая травма</Ceres.PharmacistReprescribed.Severity.Minor>
+	<Ceres.PharmacistReprescribed.Severity.Major>Серьезная травма</Ceres.PharmacistReprescribed.Severity.Major>
+	<Ceres.PharmacistReprescribed.Severity.LifeThreathening>Жестокая травма</Ceres.PharmacistReprescribed.Severity.LifeThreathening>
+	<Ceres.PharmacistReprescribed.Severity.Operation>Операции</Ceres.PharmacistReprescribed.Severity.Operation>
 
-	<Fluffy.Pharmacist.Severity.Minor.Tip>Ушибы, не смертельное заболевание и небольшие порезы.</Fluffy.Pharmacist.Severity.Minor.Tip>
-	<Fluffy.Pharmacist.Severity.Major.Tip>Большие порезы и потенциально смертельные заболевания.</Fluffy.Pharmacist.Severity.Major.Tip>
-	<Fluffy.Pharmacist.Severity.LifeThreathening.Tip>Жизненные угрозы, сердечные приступы и почти смертельные заболевания.</Fluffy.Pharmacist.Severity.LifeThreathening.Tip>
-	<Fluffy.Pharmacist.Severity.Operation.Tip>Все операции, пересадка и замена конечностей.</Fluffy.Pharmacist.Severity.Operation.Tip>
+	<Ceres.PharmacistReprescribed.Severity.Minor.Tip>Ушибы, не смертельное заболевание и небольшие порезы.</Ceres.PharmacistReprescribed.Severity.Minor.Tip>
+	<Ceres.PharmacistReprescribed.Severity.Major.Tip>Большие порезы и потенциально смертельные заболевания.</Ceres.PharmacistReprescribed.Severity.Major.Tip>
+	<Ceres.PharmacistReprescribed.Severity.LifeThreathening.Tip>Жизненные угрозы, сердечные приступы и почти смертельные заболевания.</Ceres.PharmacistReprescribed.Severity.LifeThreathening.Tip>
+	<Ceres.PharmacistReprescribed.Severity.Operation.Tip>Все операции, пересадка и замена конечностей.</Ceres.PharmacistReprescribed.Severity.Operation.Tip>
 
-	<Fluffy.Pharmacist.DiseaseMargin>Порог иммунитета болезни: {0}</Fluffy.Pharmacist.DiseaseMargin>
-	<Fluffy.Pharmacist.DiseaseMargin.Tip>Защитный запас, используемый при лечении заболеваний. \n\nЕсли иммунитет ниже, чем прогресс болезни плюс этот запас(а степень тяжести выше минимального порога).\n\nНапример, если заболевание 75%, а иммунитет 80% и запас 10%, болезнь будет классифицироваться как опасная для жизни. Если порог 5%, вместо этого болезнь будет классифицирована как серьезная травма.</Fluffy.Pharmacist.DiseaseMargin.Tip>
-	<Fluffy.Pharmacist.DiseaseThreshold>Минимальный порог заболевания: {0}</Fluffy.Pharmacist.DiseaseThreshold>
-	<Fluffy.Pharmacist.DiseaseThreshold.Tip>Минимальная степень тяжести заболевания, которая может быть классифицирована как потенциально смертельная. \n\nЕсли болезнь выше этого порога(и иммунитет ниже, чем уровень болезни плюс порог), болезнь расматривается как опасная для жизни травма.</Fluffy.Pharmacist.DiseaseThreshold.Tip>
-	<Fluffy.Pharmacist.MinorWoundsThreshold>Минимальное количество порезов: {0}</Fluffy.Pharmacist.MinorWoundsThreshold>
-	<Fluffy.Pharmacist.MinorWoundsThreshold.Tip>Если количество мелких порезов больше этого порога, они рассматриваются как серьезная травма, независимо от скорости кровотечения. \n\nПолезно для предотвращения 'смерти тысячами порезов', где большое количество небольших порезов может вызвать множественные инфекции.</Fluffy.Pharmacist.MinorWoundsThreshold.Tip>
+	<Ceres.PharmacistReprescribed.DiseaseMargin>Порог иммунитета болезни: {0}</Ceres.PharmacistReprescribed.DiseaseMargin>
+	<Ceres.PharmacistReprescribed.DiseaseMargin.Tip>Защитный запас, используемый при лечении заболеваний. \n\nЕсли иммунитет ниже, чем прогресс болезни плюс этот запас(а степень тяжести выше минимального порога).\n\nНапример, если заболевание 75%, а иммунитет 80% и запас 10%, болезнь будет классифицироваться как опасная для жизни. Если порог 5%, вместо этого болезнь будет классифицирована как серьезная травма.</Ceres.PharmacistReprescribed.DiseaseMargin.Tip>
+	<Ceres.PharmacistReprescribed.DiseaseThreshold>Минимальный порог заболевания: {0}</Ceres.PharmacistReprescribed.DiseaseThreshold>
+	<Ceres.PharmacistReprescribed.DiseaseThreshold.Tip>Минимальная степень тяжести заболевания, которая может быть классифицирована как потенциально смертельная. \n\nЕсли болезнь выше этого порога(и иммунитет ниже, чем уровень болезни плюс порог), болезнь расматривается как опасная для жизни травма.</Ceres.PharmacistReprescribed.DiseaseThreshold.Tip>
+	<Ceres.PharmacistReprescribed.MinorWoundsThreshold>Минимальное количество порезов: {0}</Ceres.PharmacistReprescribed.MinorWoundsThreshold>
+	<Ceres.PharmacistReprescribed.MinorWoundsThreshold.Tip>Если количество мелких порезов больше этого порога, они рассматриваются как серьезная травма, независимо от скорости кровотечения. \n\nПолезно для предотвращения 'смерти тысячами порезов', где большое количество небольших порезов может вызвать множественные инфекции.</Ceres.PharmacistReprescribed.MinorWoundsThreshold.Tip>
 	
 </LanguageData>

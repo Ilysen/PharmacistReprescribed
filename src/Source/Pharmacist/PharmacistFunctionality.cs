@@ -6,11 +6,11 @@ using RimWorld;
 using System.Linq;
 using Verse;
 
-namespace Pharmacist
+namespace Ceres.PharmacistReprescribed
 {
 	/// <summary>
 	/// A list of all injurity severity categories that the pharmacist can diagnose.
-	/// This is typically calculated for a given health state in <c><see cref="PharmacistUtility.GetTendSeverity(Pawn)"/></c>.
+	/// This is typically calculated for a given health state in <c><see cref="PharmacistFunctionality.GetTendSeverity(Pawn)"/></c>.
 	/// </summary>
 	public enum InjurySeverity
 	{
@@ -23,7 +23,7 @@ namespace Pharmacist
 
 	/// <summary>
 	/// A list of all the population groups that a pawn can fall into.
-	/// This is determined exclusively in <c><see cref="PharmacistUtility.GetPopulation(Pawn)"/></c>.
+	/// This is determined exclusively in <c><see cref="PharmacistFunctionality.GetPopulation(Pawn)"/></c>.
 	/// </summary>
 	/// TODO one day - make these all subclass instances or something; ideally it'd be something more extensible
 	public enum Population
@@ -39,7 +39,7 @@ namespace Pharmacist
 	/// <summary>
 	/// Contains most of the pharmacist's functionality, including diagnosis, population group calculation, and so on.
 	/// </summary>
-	public static class PharmacistUtility
+	public static class PharmacistFunctionality
 	{
 		/// <summary>
 		/// This is the meat of how the Pharmacist determines what tending is needed.

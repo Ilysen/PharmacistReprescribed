@@ -1,7 +1,3 @@
-// Karel Kroeze
-// HealthAIUtility_FindBestMedicine.cs
-// 2017-02-11
-
 using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
@@ -9,7 +5,7 @@ using System.Linq;
 using Verse;
 using Verse.AI;
 
-namespace Pharmacist.HarmonyPatches
+namespace Ceres.PharmacistReprescribed.HarmonyPatches
 {
 	[HarmonyPatch(typeof(HealthAIUtility))]
 	public class HealthAIUtility_Patch
@@ -42,7 +38,7 @@ namespace Pharmacist.HarmonyPatches
 			bool forceAllowAllMeds = patient.playerSettings == null && onlyUseInventory;
 			MedicalCareCategory pharmacistAdvice = healer.Drafted ? (
 				patient?.playerSettings?.medCare ?? (forceAllowAllMeds ? MedicalCareCategory.Best : MedicalCareCategory.NoMeds)
-				) : PharmacistUtility.TendAdvice(patient);
+				) : PharmacistFunctionality.TendAdvice(patient);
 #if DEBUG
 			Log.Message($"checking pharmacist recommends no meds: {pharmacistAdvice <= MedicalCareCategory.NoMeds}");
 #endif
@@ -116,8 +112,8 @@ namespace Pharmacist.HarmonyPatches
 			}
 
 			// search complete. search through all of our candidate meds, and pick the best possible one
-			if (candidateMeds.Count != 0)
-				__result = candidateMeds.MaxBy(GetMedicalPotency);
+			if (candidateMeds.Count != 0 && candidateMeds.TryMaxBy(GetMedicalPotency, out var max))
+				__result = max;
 
 			// uh oh, we found nothing usable. check nearby animal inventories if we're allowed
 			if (__result == null && healer.IsColonist)
@@ -163,8 +159,8 @@ namespace Pharmacist.HarmonyPatches
 				if (inventory.Count == 0)
 					return null;
 				var located = inventory.Where(IsPrescribedMedicine);
-				if (located.Any())
-					return located.MaxBy(GetMedicalPotency);
+				if (located.Any() && located.TryMaxBy(GetMedicalPotency, out var max))
+					return max;
 				return null;
 			}
 		}
@@ -176,7 +172,7 @@ namespace Pharmacist.HarmonyPatches
 #if DEBUG
 			Log.Message("shouldeverreceive init");
 #endif
-			if (__result && PharmacistUtility.TendAdvice(pawn) == MedicalCareCategory.NoCare)
+			if (__result && PharmacistFunctionality.TendAdvice(pawn) == MedicalCareCategory.NoCare)
 			{
 #if DEBUG
 				Log.Message("pharmacist says no care, adjusting to false");

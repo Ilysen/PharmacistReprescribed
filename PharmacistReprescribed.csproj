@@ -8,6 +8,7 @@
         <OutputPath>src\Assemblies\</OutputPath>
         <DebugType>portable</DebugType>
         <LangVersion>9</LangVersion>
+        <RootNamespace>Ceres.PharmacistReprescribedReprescribed</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
       <Reference Update="System">
@@ -55,17 +56,21 @@
       </Reference>
     </ItemGroup>
     <ItemGroup>
+      <None Include="PharmacistReprescribed.sln" />
       <None Include="src\Assemblies\PharmacistReprescribed.dll" />
     </ItemGroup>
     <ItemGroup>
       <Reference Include="0Harmony">
         <HintPath>D:\Steam\steamapps\workshop\content\294100\2009463077\1.6\Assemblies\0Harmony.dll</HintPath>
+        <Private>False</Private>
       </Reference>
       <Reference Include="Assembly-CSharp">
         <HintPath>D:\Steam\steamapps\common\RimWorld\Assembly-CSharp.dll</HintPath>
+        <Private>False</Private>
       </Reference>
       <Reference Include="UnityStubs">
         <HintPath>D:\Steam\steamapps\common\RimWorld\UnityStubs.dll</HintPath>
+        <Private>False</Private>
       </Reference>
     </ItemGroup>
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">

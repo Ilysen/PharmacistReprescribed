@@ -1,9 +1,11 @@
-﻿This file contains the text used for the Steam Workshop page. It isn't automatically updated or anything by it being here; it's just here for documentation purposes and to make editing it easier!
+﻿This file contains the text used for the Steam Workshop page. It isn't automatically updated or anything; it's just here for documentation purposes and to make editing it easier.
 
 ___
 
 ```bbcode
 [b]Last tested on game version:[/b] 1.6.4633
+
+[i]This mod contains zero AI.[/i]
 
 A continuation/fork/successor of the lovely mod Pharmacist, originally created by Fluffy. For a full description of what the mod does, you can consult the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1365242717]original page[/url], but in short: Pharmacist allows you to set the maximum level of medicine that can be used for different severities of injury. Doctors will determine which medicine to use based on the type of wound, the Pharmacist's configured settings, and the target's individually-configured medical care (as in vanilla.)
 
@@ -49,6 +51,9 @@ So there's actually a quirk specifically to mechanites that isn't immediately ob
 
 [h3]Does this version  have automatic blood transfusions?[/h3]
 This was a feature implemented in one of the unofficial continuations of the original mod, but I decided against including it here: I'm not a fan of the way the implementation worked in that version, but more importantly I think it's fallen victim to a bit of feature creep. The only way that the automatic transfusion stuff relates to Pharmacist's main feature is that they both do medically-related stuff. I think automatic transfusions would work fine as their own mod, but I don't really wanna add them here!
+
+[h3]Can I do anything about the bottom bar tab?[/h3]
+You can toggle its visibility in the mod settings! You can also [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3593612390]Pharmacist Icon[/url], a super simple addon mod by Marconius, to make it less intrusive.
 
 [h2]Compatibility & troubleshooting[/h2]
 [b][i]I have not tested compatibility too much, so you're in unmapped waters.[/i][/b] I made this fork for personal use, and I tend to run a pretty light mod list. I've tried to keep the code as clean as possible, but if you run into any compatibility issues, let me know and I'll take a look.

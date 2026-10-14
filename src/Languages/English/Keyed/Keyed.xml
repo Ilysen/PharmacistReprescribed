@@ -42,4 +42,6 @@
 	<Fluffy.Pharmacist.SearchRadius.Tip>Doctors will only search for medicine within this radius. If none can be found, they will use only whatever they have in their inventory.</Fluffy.Pharmacist.SearchRadius.Tip>
 	<Fluffy.Pharmacist.SearchRadius.Unlimited>Unlimited</Fluffy.Pharmacist.SearchRadius.Unlimited>
 
+	<Fluffy.Pharmacist.Settings.ToggleTab>Hide bottom bar tab</Fluffy.Pharmacist.Settings.ToggleTab>
+	<Fluffy.Pharmacist.Settings.ToggleTab.Tooltip>Toggles visibility of the main tab. Settings will still be present; they just won't be visible.</Fluffy.Pharmacist.Settings.ToggleTab.Tooltip>
 </LanguageData>

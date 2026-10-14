@@ -1,7 +1,7 @@
 // Constants.cs
 // Copyright Karel Kroeze, 2018-2018
 
-namespace Pharmacist
+namespace Ceres.PharmacistReprescribed
 {
 	public static class Constants
 	{

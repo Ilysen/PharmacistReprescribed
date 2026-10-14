@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-  <MainButtonDef>
-    <defName>Pharmacist</defName>
-    <label>pharmacist</label>
-    <description>Not all wounds are equal; set guidelines for which medicine to use when.</description>
-    <tabWindowClass>Pharmacist.MainTabWindow_Pharmacist</tabWindowClass>
-    <order>99</order>
-  </MainButtonDef>
-
+	<MainButtonDef>
+		<defName>Pharmacist</defName>
+		<label>pharmacist</label>
+		<description>Not all wounds are equal; set guidelines for which medicine to use when.</description>
+		<workerClass>Ceres.PharmacistReprescribed.MainButtonWorker_TogglePharmacistTab</workerClass>
+		<tabWindowClass>Ceres.PharmacistReprescribed.MainTabWindow_Pharmacist</tabWindowClass>
+		<minimized>True</minimized>
+		<iconPath>UI/Icons/plus-symbol</iconPath>
+		<order>71</order>
+	</MainButtonDef>
 </Defs>

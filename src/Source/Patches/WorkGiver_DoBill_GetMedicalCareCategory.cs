@@ -1,11 +1,8 @@
-// WorkGiver_DoBill_GetMedicalCareCategory.cs
-// Copyright Karel Kroeze, 2018-2018
-
 using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace Pharmacist.HarmonyPatches
+namespace Ceres.PharmacistReprescribed.HarmonyPatches
 {
 	[HarmonyPatch(typeof(WorkGiver_DoBill), "GetMedicalCareCategory")]
 	public static class WorkGiver_DoBill_GetMedicalCareCategory
@@ -20,7 +17,7 @@ namespace Pharmacist.HarmonyPatches
 			else
 			{
 				// assumption: bills on people === operations
-				__result = PharmacistUtility.TendAdvice(pawn, InjurySeverity.Operation);
+				__result = PharmacistFunctionality.TendAdvice(pawn, InjurySeverity.Operation);
 			}
 
 			// always cancel execution of vanilla method.

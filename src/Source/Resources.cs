@@ -1,12 +1,9 @@
-// Resources.cs
-// Copyright Karel Kroeze, 2018-2018
-
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace Pharmacist
+namespace Ceres.PharmacistReprescribed
 {
 	[StaticConstructorOnStartup]
 	public static class Resources

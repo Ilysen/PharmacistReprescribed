@@ -13,6 +13,15 @@ This is only for me (the author) to keep track of stuff that I may or may not wo
 - Move settings popup to a button in the health window
 
 ## Changelog
+### ???, 2026
+#### Version 0.2
+* General backend cleanup. Overall functionality should be essentially identical.
+* Bottom bar touchups:
+	* Now appears after the World tab but before the History tab.
+	* Now has an icon instead of the word Pharmacist, making it less visually intrusive.
+	* Can now be hidden (this is cosmetic; existing configurations will remain active) through a toggle in the mod settings.
+* *Internal:* Reshuffled a lot of class names and namespaces, i.e. `Pharmacist` -> `Ceres.PharmacistReprescribed`. Also removed some old redundant copyright notices, documentation, etc from the original mod. now that I'm a bit more experienced with RW's codebase, I feel more confident in changing this stuff knowing it won't cause any weird bugs!
+
 ### 9 December, 2025
 #### Version 0.1.4
 * Tentative fix for the "No care" setting not working as intended. Might have issues.

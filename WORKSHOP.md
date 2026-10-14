@@ -3,7 +3,7 @@
 ___
 
 ```bbcode
-[b]Last tested on game version:[/b] 1.6.4633
+[b]Last tested on game version:[/b] 1.7
 
 [i]This mod contains zero AI.[/i]
 
@@ -11,7 +11,7 @@ A continuation/fork/successor of the lovely mod Pharmacist, originally created b
 
 You can find this mod's source code on [url=https://github.com/Ilysen/PharmacistReprescribed]GitHub[/url], under the MIT license. Non-Steam releases can be found here too!
 
-Sprite assets are sourced from [url=https://fontawesome.com/icons]Font Awesome 6.7.2[/url], under the CC-BY-SA 4.0 license.
+Sprite assets (excepting `plus-symbol.png`, which is original) are sourced from [url=https://fontawesome.com/icons]Font Awesome 6.7.2[/url], under the CC-BY-SA 4.0 license.
 
 [i]Note:[/i] If you're using a save that used a previous version of Pharmacist, settings might not migrate cleanly, which could result in some weird behavior. This can apparently be permanently fixed by just changing any setting in the tab though!
 
@@ -49,8 +49,8 @@ Blood rot (along with things like gut worms, etc. -- see  the "Changes to the or
 [h3]Fibrous/sensory mechanites have upsides. Can we treat those differently than strictly negative conditions?[/h3]
 So there's actually a quirk specifically to mechanites that isn't immediately obvious: tending doesn't remove them any faster. Instead, fibrous/sensory mechanites always have a flat duration, and tending will prevent them from going from the [i]mild pain[/i] to [i]intense pain[/i] stage. Since those things are the case, and tending doesn't cause the disease to disappear more quickly, they're currently lumped in with the other long-term conditions.
 
-[h3]Does this version  have automatic blood transfusions?[/h3]
-This was a feature implemented in one of the unofficial continuations of the original mod, but I decided against including it here: I'm not a fan of the way the implementation worked in that version, but more importantly I think it's fallen victim to a bit of feature creep. The only way that the automatic transfusion stuff relates to Pharmacist's main feature is that they both do medically-related stuff. I think automatic transfusions would work fine as their own mod, but I don't really wanna add them here!
+[h3]Does this work with modded medicines?[/h3]
+It should. If it doesn't, let me know.
 
 [h3]Can I do anything about the bottom bar tab?[/h3]
 You can toggle its visibility in the mod settings! You can also [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3593612390]Pharmacist Icon[/url], a super simple addon mod by Marconius, to make it less intrusive.

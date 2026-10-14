@@ -17,6 +17,7 @@ This is only for me (the author) to keep track of stuff that I may or may not wo
 #### Version 0.2
 * General backend cleanup. Overall functionality should be essentially identical.
 * Darkened the colors of the icons in order to give them parity with vanilla UI.
+* Patient types (colonists, prisoners, etc) now match the name and description of vanilla categories. Behavior remains the same!
 * Bottom bar touchups:
 	* Now appears after the World tab but before the History tab.
 	* Now has an icon instead of the word Pharmacist, making it less visually intrusive.

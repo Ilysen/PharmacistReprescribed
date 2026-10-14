@@ -178,14 +178,16 @@ namespace Ceres.PharmacistReprescribed
 
 			foreach (Population population in populations)
 			{
-				if (population == Population.Entity && !ModsConfig.AnomalyActive)
+				if (population == Population.Entities && !ModsConfig.AnomalyActive)
 					continue;
-				if (population == Population.Slave && !ModsConfig.IdeologyActive)
+				if (population == Population.Slaves && !ModsConfig.IdeologyActive)
 					continue;
 				Rect populationLabelRect = new Rect(pos.x, pos.y, CareSelectorRowLabelWidth, RowHeight);
 				Text.Anchor = TextAnchor.MiddleLeft;
-				Widgets.Label(populationLabelRect, $"Ceres.PharmacistReprescribed.Population.{population}".Translate());
-				TooltipHandler.TipRegion(populationLabelRect, $"Ceres.PharmacistReprescribed.Population.{population}.Desc".Translate());
+				// lmao this line sucks so bad
+				// "ceres why don't you fix it" why don't you pay me!!!!
+				Widgets.Label(populationLabelRect, population == Population.Guest ? "Ceres.PharmacistReprescribed.Population.Guest".Translate() : $"MedGroup{population}".Translate());
+				TooltipHandler.TipRegion(populationLabelRect, population == Population.Guest ? "Ceres.PharmacistReprescribed.Population.Guest.Desc".Translate() : $"MedGroup{population}Desc".Translate());
 				Text.Anchor = TextAnchor.UpperLeft;
 
 				Widgets.DrawHighlightIfMouseover(populationLabelRect);

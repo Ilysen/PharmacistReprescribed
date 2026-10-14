@@ -182,7 +182,7 @@ namespace Ceres.PharmacistReprescribed
 		public static void SetDefaults()
 		{
 			CareSettings = new MedicalCare();
-			CareSettings[Population.Colonist] = new PopulationCare(
+			CareSettings[Population.Colonists] = new PopulationCare(
 				MedicalCareCategory.HerbalOrWorse,
 				MedicalCareCategory.NormalOrWorse,
 				MedicalCareCategory.Best,
@@ -196,28 +196,28 @@ namespace Ceres.PharmacistReprescribed
 				MedicalCareCategory.NormalOrWorse,
 				MedicalCareCategory.NoMeds);
 
-			CareSettings[Population.Prisoner] = new PopulationCare(
+			CareSettings[Population.Prisoners] = new PopulationCare(
 				MedicalCareCategory.NoMeds,
 				MedicalCareCategory.HerbalOrWorse,
 				MedicalCareCategory.NormalOrWorse,
 				MedicalCareCategory.NormalOrWorse,
 				MedicalCareCategory.HerbalOrWorse);
 
-			CareSettings[Population.Animal] = new PopulationCare(
+			CareSettings[Population.TamedAnimals] = new PopulationCare(
 				MedicalCareCategory.NoMeds,
 				MedicalCareCategory.HerbalOrWorse,
 				MedicalCareCategory.NormalOrWorse,
 				MedicalCareCategory.NormalOrWorse,
 				MedicalCareCategory.HerbalOrWorse);
 
-			CareSettings[Population.Slave] = new PopulationCare(
+			CareSettings[Population.Slaves] = new PopulationCare(
 				MedicalCareCategory.NoMeds,
 				MedicalCareCategory.HerbalOrWorse,
 				MedicalCareCategory.NormalOrWorse,
 				MedicalCareCategory.NormalOrWorse,
 				MedicalCareCategory.HerbalOrWorse);
 
-			CareSettings[Population.Entity] = new PopulationCare(
+			CareSettings[Population.Entities] = new PopulationCare(
 				MedicalCareCategory.NoMeds,
 				MedicalCareCategory.NoMeds,
 				MedicalCareCategory.HerbalOrWorse,

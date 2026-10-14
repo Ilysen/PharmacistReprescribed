@@ -28,11 +28,11 @@ namespace Ceres.PharmacistReprescribed
 	/// TODO one day - make these all subclass instances or something; ideally it'd be something more extensible
 	public enum Population
 	{
-		Colonist,
-		Prisoner,
-		Slave,
-		Animal,
-		Entity,
+		Colonists,
+		Prisoners,
+		Slaves,
+		TamedAnimals,
+		Entities,
 		Guest,
 	}
 
@@ -156,19 +156,19 @@ namespace Ceres.PharmacistReprescribed
 		public static Population GetPopulation(this Pawn patient)
 		{
 			if (patient.IsAnimal && patient.Faction == Faction.OfPlayer)
-				return Population.Animal;
+				return Population.TamedAnimals;
 
 			if (patient.IsColonist)
-				return Population.Colonist;
+				return Population.Colonists;
 
 			if (patient.IsPrisonerOfColony)
-				return Population.Prisoner;
+				return Population.Prisoners;
 
 			if (patient.IsSlaveOfColony)
-				return Population.Slave;
+				return Population.Slaves;
 
 			if (patient.IsEntity)
-				return Population.Entity;
+				return Population.Entities;
 
 			return Population.Guest;
 		}

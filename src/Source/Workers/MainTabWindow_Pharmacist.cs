@@ -59,7 +59,7 @@ namespace Ceres.PharmacistReprescribed
 				OptionsHeight);
 
 			Text.Font = GameFont.Medium;
-			Widgets.Label(titleRect, "Ceres.PharmacistReprescribed.Settings.Title".Translate());
+			Widgets.Label(titleRect, "Ceres.PharmacistReprescribed.Config.Title".Translate());
 			Text.Font = GameFont.Small;
 
 			DrawCareSelectors(careSelectorRect);

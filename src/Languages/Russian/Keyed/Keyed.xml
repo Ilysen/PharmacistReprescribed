@@ -4,7 +4,7 @@
 	<Ceres.PharmacistReprescribed>Фармацевт</Ceres.PharmacistReprescribed>
 	<Ceres.PharmacistReprescribed.Tip>Не все раненые равны; установите уровень лекарст для каждого из них.</Ceres.PharmacistReprescribed.Tip>
 
-	<Ceres.PharmacistReprescribed.Settings.Title>Настройка Фармацевта</Ceres.PharmacistReprescribed.Settings.Title>
+	<Ceres.PharmacistReprescribed.Config.Title>Настройка Фармацевта</Ceres.PharmacistReprescribed.Config.Title>
 	<Ceres.PharmacistReprescribed.Settings.Tip></Ceres.PharmacistReprescribed.Settings.Tip>
 
 	<Ceres.PharmacistReprescribed.Population.Colonist>Колонист</Ceres.PharmacistReprescribed.Population.Colonist>

@@ -4,7 +4,9 @@
 	<Ceres.PharmacistReprescribed>Pharmacist</Ceres.PharmacistReprescribed>
 	<Ceres.PharmacistReprescribed.Tip>Not all wounds are equal; set guidelines for which medicine to use when.</Ceres.PharmacistReprescribed.Tip>
 
-	<Ceres.PharmacistReprescribed.Settings.Title>Pharmacist settings</Ceres.PharmacistReprescribed.Settings.Title>
+	<Ceres.PharmacistReprescribed.Config.Title>Pharmacist settings</Ceres.PharmacistReprescribed.Config.Title>
+	
+	<!-- todo: remove this one, it's unused -->
 	<Ceres.PharmacistReprescribed.Settings.Tip></Ceres.PharmacistReprescribed.Settings.Tip>
 
 	<Ceres.PharmacistReprescribed.Population.Colonist>Colonists</Ceres.PharmacistReprescribed.Population.Colonist>

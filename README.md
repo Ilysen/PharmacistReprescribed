@@ -7,13 +7,14 @@ Sprite assets used in this mod are sourced from [Font Awesome 6.7.2](https://fon
 
 The full text of both licenses can be found in [LICENSE.md](LICENSE.md).
 
+This mod contains zero AI.
+
 ### To-Do
-This is only for me (the author) to keep track of stuff that I may or may not work on at some point. Don't take this as a roadmap or anything like that!
-- Setting to turn off main button
+This is only for me (the author) to keep track of stuff that I may or may not work on at some point. Don't take this as a roadmap or anything like that.
 - Move settings popup to a button in the health window
 
 ## Changelog
-### ???, 2026
+### INDEV
 #### Version 0.2
 * General backend cleanup. Overall functionality should be essentially identical.
 * Darkened the colors of the icons in order to give them parity with vanilla UI.
